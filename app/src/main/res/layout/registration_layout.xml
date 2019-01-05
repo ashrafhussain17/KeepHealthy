@@ -15,7 +15,7 @@
             android:inputType="textPersonName"
             android:text="Name"
             android:textSize="30dp"
-            android:id="@+id/email_field"
+            android:id="@+id/Remail_field"
             android:layout_margin="10dp"
     />
 
@@ -25,14 +25,12 @@
             android:inputType="textPersonName"
             android:text="Name"
             android:textSize="30dp"
-            android:id="@+id/passwordField"
+            android:id="@+id/RpasswordField"
             android:layout_margin="10dp"/>
 
     <Button android:layout_width="wrap_content" android:layout_height="wrap_content"
-    android:text="OK" android:id="@+id/okButton"/>
+            android:text="OK" android:id="@+id/RokButton"/>
 
-    <Button android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Registration" android:id="@+id/Regi"/>
-
-    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Log in"/>
+    <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Registration"/>
 
 </LinearLayout>
