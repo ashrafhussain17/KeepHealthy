@@ -1,3 +1,14 @@
 <resources>
     <string name="app_name">KeepHealthy</string>
+    <string name="calorie_taken">0 kKal</string>
+    <string name="water_taken">0 ml</string>
+    <string name="sleep_hours">0 Hours</string>
+    <string name="calorie_burnt">0 kKal</string>
+    <string-array name="quantity">
+        <item>Quantity</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
 </resources>

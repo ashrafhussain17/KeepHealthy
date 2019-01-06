@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical"
+              tools:context=".meal">
+
+    <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:background="@color/back"
+            android:orientation="vertical">
+
+    </LinearLayout>
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="97dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+                android:id="@+id/breakfasT"
+                android:layout_width="108dp"
+                android:layout_height="70dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/ripple_effect"
+                android:src="@drawable/food"
+                android:scaleType="center"
+                android:onClick="clicked"
+                android:clickable="true"
+
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" tools:ignore="OnClick"/>
+
+        <TextView
+                android:id="@+id/breakfast"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="8dp"
+                android:text="Breakfast"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/morningsnackS"
+                app:layout_constraintVertical_bias="1.0"
+                tools:ignore="NotSibling" />
+
+        <ImageView
+                android:id="@+id/luncH"
+                android:layout_width="108dp"
+                android:layout_height="70dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/breakfast"
+                android:scaleType="center"
+                android:onClick="clicked"
+                android:src="@drawable/fish"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/dinneR"
+                app:layout_constraintStart_toEndOf="@+id/breakfasT"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.185" tools:ignore="OnClick"/>
+
+        <TextView
+                android:id="@+id/Lunch"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginEnd="40dp"
+                android:layout_marginStart="160dp"
+                android:layout_marginTop="8dp"
+                android:text="Lunch"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.018"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/morningsnackS"
+                app:layout_constraintVertical_bias="0.973"
+                tools:ignore="NotSibling" />
+
+        <ImageView
+                android:id="@+id/dinneR"
+                android:layout_width="108dp"
+                android:layout_height="70dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/breakfast"
+                android:scaleType="center"
+                android:src="@drawable/rice"
+                android:onClick="clicked"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.18" tools:ignore="OnClick"/>
+
+        <TextView
+                android:id="@+id/dinner"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginEnd="35dp"
+                android:layout_marginTop="8dp"
+                android:text="Dinner"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/morningsnackS"
+                app:layout_constraintVertical_bias="1.0"
+                tools:ignore="NotSibling" />
+
+
+    </android.support.constraint.ConstraintLayout>
+
+    <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="126dp">
+
+
+        <ImageView
+                android:id="@+id/morningsnackS"
+                android:layout_width="108dp"
+                android:layout_height="70dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentEnd="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/breakfast"
+
+                android:scaleType="center"
+                android:src="@drawable/coffee"
+                android:focusable="true"
+                android:clickable="true"
+                android:onClick="clicked"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.2"
+                tools:ignore="OnClick"/>
+
+        <ImageView
+                android:id="@+id/eveningsnackS"
+                android:layout_width="108dp"
+                android:layout_height="70dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:background="@drawable/breakfast"
+                android:onClick="clicked"
+                android:scaleType="center"
+                android:src="@drawable/glass_cocktail"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.489"
+                app:layout_constraintStart_toEndOf="@+id/morningsnackS"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.28" tools:ignore="OnClick"/>
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Evening Snacks"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.468"
+                app:layout_constraintStart_toEndOf="@+id/textView"
+                app:layout_constraintTop_toBottomOf="@+id/eveningsnackS"
+                app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="18dp"
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="8dp"
+                android:text="Morning Snacks"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/morningsnackS"
+                app:layout_constraintVertical_bias="0.0" />
+
+    </android.support.constraint.ConstraintLayout>
+
+
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="20dp"
+            android:text="Total Intake"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/scrollback"
+    >
+
+        <ScrollView
+
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+            <TextView
+
+                    android:layout_margin="15dp"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+        </ScrollView>
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
