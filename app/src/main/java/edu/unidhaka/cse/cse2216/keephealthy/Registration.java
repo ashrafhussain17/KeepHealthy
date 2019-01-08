@@ -14,7 +14,7 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class Registration extends Activity {
 
-    //hello 
+    //hello
 
 
     Button ROKButton;
