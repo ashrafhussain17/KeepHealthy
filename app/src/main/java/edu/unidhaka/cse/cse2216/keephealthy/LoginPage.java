@@ -14,6 +14,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class LoginPage extends Activity {
+    //aghsdghhga
 
     Button OKButton;
     EditText emailBox;
