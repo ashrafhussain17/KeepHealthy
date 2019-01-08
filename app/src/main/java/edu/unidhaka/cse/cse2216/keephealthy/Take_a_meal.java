@@ -12,7 +12,7 @@ import android.widget.TextView;
 public class Take_a_meal extends ArrayAdapter<String> {
 
     //region Description
-    private String [] foodname={"Rice","Apple"};
+     private String [] foodname={"Rice","Apple"};
     private String [] foodDesc={"500 cal","200 cal"};
     private String [] amount={"200gm","50 gm"};
     private Activity context;
