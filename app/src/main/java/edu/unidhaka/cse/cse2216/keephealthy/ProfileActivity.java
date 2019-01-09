@@ -48,6 +48,8 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
 
         //adding listener to button
         buttonLogout.setOnClickListener(this);
+
+
     }
 
     @Override
