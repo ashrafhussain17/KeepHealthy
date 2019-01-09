@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "466552888405",
+    "firebase_url": "https://keephealthy-3000b.firebaseio.com",
+    "project_id": "keephealthy-3000b",
+    "storage_bucket": "keephealthy-3000b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:466552888405:android:5e0f3943e1c420fc",
+        "android_client_info": {
+          "package_name": "edu.unidhaka.cse.cse2216.keephealthy"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "466552888405-746815vmn3vthpetr0ad84octc480bla.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.unidhaka.cse.cse2216.keephealthy",
+            "certificate_hash": "b33b9af6f7c41562575a137cbdbf49afce87d92e"
+          }
+        },
+        {
+          "client_id": "466552888405-nnqj7nbrec6kllbnj58b2hepv1gc8em1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDCFxvEnMLqMSMKBBFQqdxvmnhcyODPm78"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "466552888405-nnqj7nbrec6kllbnj58b2hepv1gc8em1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
