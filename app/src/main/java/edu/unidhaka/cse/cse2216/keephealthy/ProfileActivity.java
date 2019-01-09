@@ -45,6 +45,7 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
 
         //displaying logged in user name
         textViewUserEmail.setText("Welcome "+user.getEmail());
+        //test
 
         //adding listener to button
         buttonLogout.setOnClickListener(this);
