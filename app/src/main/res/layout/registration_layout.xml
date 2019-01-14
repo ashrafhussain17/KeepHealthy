@@ -14,7 +14,7 @@
 
 
     <LinearLayout
-            android:orientation="vertical"
+
             android:layout_width="match_parent"
             android:layout_height="220dp"
             android:background="@color/button_back"
@@ -24,8 +24,10 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:layout_marginBottom="296dp"
-    >
+            android:orientation="horizontal"
+            android:layout_marginBottom="228dp" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
+
     </LinearLayout>
     <LinearLayout
             android:orientation="vertical"
@@ -49,6 +51,7 @@
                 android:layout_height="63dp" android:id="@+id/textView2" android:textSize="24sp"
         />
         <TextView
+
                 android:text="ENTER EMAIL"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
@@ -87,11 +90,12 @@
         <Button android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:text="SIGN UP"
-                android:id="@+id/signinBtn"
+                android:onClick="click"
                 android:textColor="@color/breakfast"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:layout_marginTop="20dp"
+                android:id="@+id/signinBtn"
                 android:background="@drawable/addfood_back"/>
 
 
