@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,7 +17,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class LoginPage extends Activity implements  View.OnClickListener {
+public class LoginPage extends Activity  {
 
 
     //defining views
@@ -35,7 +36,9 @@ public class LoginPage extends Activity implements  View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d("sakib","b4login");
         setContentView(R.layout.login);
+        Log.d("sakib","after login");
 
         //getting firebase auth object
         firebaseAuth = FirebaseAuth.getInstance();
@@ -48,18 +51,17 @@ public class LoginPage extends Activity implements  View.OnClickListener {
             //opening profile activity
             startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
         }
-
+        Log.d("sakib","after firebase");
         //initializing views
-        editTextEmail = (EditText) findViewById(R.id.editTextEmail);
-        editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-        buttonSignIn = (Button) findViewById(R.id.buttonSignin);
-        textViewSignup = (TextView) findViewById(R.id.textViewSignUp);
+        editTextEmail = (EditText) findViewById(R.id.emailtext);
+        editTextPassword = (EditText) findViewById(R.id.passwordtext);
+        buttonSignIn = (Button) findViewById(R.id.signinBtn);
+        textViewSignup = (TextView) findViewById(R.id.signuplink);
 
         progressDialog = new ProgressDialog(this);
 
         //attaching click listener
-        buttonSignIn.setOnClickListener(this);
-        textViewSignup.setOnClickListener(this);
+
     }
 
     //method for user login
@@ -102,16 +104,28 @@ public class LoginPage extends Activity implements  View.OnClickListener {
 
     }
 
-    @Override
-    public void onClick(View view) {
+    public void click(View view)
+    {
         if (view == buttonSignIn) {
-            userLogin();
-        }
+        userLogin();
+    }
 
         if (view == textViewSignup) {
             finish();
             startActivity(new Intent(this, Registration.class));
         }
     }
+//    @Override
+//    public void onClick(View view) {
+//        Log.d("sakib","inside onclick");
+//        if (view == buttonSignIn) {
+//            userLogin();
+//        }
+//
+//        if (view == textViewSignup) {
+//            finish();
+//            startActivity(new Intent(this, Registration.class));
+//        }
+//    }
 }
 

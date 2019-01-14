@@ -16,7 +16,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Registration extends Activity implements View.OnClickListener {
+public class Registration extends Activity{
 
         //defining view objects
         private EditText editTextEmail;
@@ -50,17 +50,15 @@ public class Registration extends Activity implements View.OnClickListener {
             }
 
             //initializing views
-            editTextEmail = (EditText) findViewById(R.id.editTextEmail);
-            editTextPassword = (EditText) findViewById(R.id.editTextPassword);
-            textViewSignin = (TextView) findViewById(R.id.textViewSignin);
+            editTextEmail = (EditText) findViewById(R.id.emailtext);
+            editTextPassword = (EditText) findViewById(R.id.passwordtext);
+            textViewSignin = (TextView) findViewById(R.id.signuplink);
 
-            buttonSignup = (Button) findViewById(R.id.buttonSignup);
+            buttonSignup = (Button) findViewById(R.id.signinBtn);
 
             progressDialog = new ProgressDialog(this);
 
-            //attaching listener to button
-            buttonSignup.setOnClickListener(this);
-            textViewSignin.setOnClickListener(this);
+
         }
 
         private void registerUser(){
@@ -105,17 +103,29 @@ public class Registration extends Activity implements View.OnClickListener {
 
         }
 
-        @Override
-        public void onClick(View view) {
+//        @Override
+//        public void onClick(View view) {
+//
+//            if(view == buttonSignup){
+//                registerUser();
+//            }
+//
+//            if(view == textViewSignin){
+//                //open login activity when user taps on the already registered textview
+//                startActivity(new Intent(this, LoginPage.class));
+//            }
+//
+//        }
 
-            if(view == buttonSignup){
-                registerUser();
-            }
-
-            if(view == textViewSignin){
-                //open login activity when user taps on the already registered textview
-                startActivity(new Intent(this, LoginPage.class));
-            }
-
+    public void click(View view)
+    {
+        if (view == buttonSignup) {
+            registerUser();
         }
+
+        if (view == textViewSignin) {
+            finish();
+            startActivity(new Intent(this, Registration.class));
+        }
+    }
     }

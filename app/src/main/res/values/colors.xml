@@ -6,9 +6,13 @@
     <color name="endblue">#0bccef</color>
     <color name="morning_snacks">#ffffff</color>
     <color name="morning_snack">#8b1515</color>
+    <color name="light_green">#099f07</color>
     <color name="button_back">#9b9fe2</color>
     <color name="back">#c7ddf5</color>
     <color name="downback">#b8c2b4</color>
+    <color name="downback2">#909190</color>
     <color name="breakfast">#ffffff</color>
+    <color name="link">#1d3cd4</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="black">#000000</color>
 </resources>
