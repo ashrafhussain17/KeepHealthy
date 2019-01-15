@@ -1,15 +1,42 @@
 package edu.unidhaka.cse.cse2216.keephealthy;
 
+import android.annotation.TargetApi;
+import android.app.ActionBar;
 import android.app.Activity;
+import android.content.ComponentName;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.graphics.Bitmap;
+import android.graphics.Matrix;
+import android.media.ExifInterface;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
+import android.os.Parcelable;
+import android.provider.MediaStore;
+import android.support.annotation.RequiresApi;
+import android.support.design.widget.FloatingActionButton;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.widget.Toolbar;
+import android.transition.ChangeBounds;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
-import android.widget.TextView;
+import android.widget.*;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import de.hdodenhof.circleimageview.CircleImageView;
 
-public class ProfileActivity extends Activity implements View.OnClickListener {
+import java.io.File;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import static android.Manifest.permission.CAMERA;
+
+public class ProfileActivity extends Activity {
 
     //firebase auth object
     private FirebaseAuth firebaseAuth;
@@ -17,6 +44,8 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
     //view objects
     private TextView textViewUserEmail;
     private Button buttonLogout;
+
+    private Button buttonDone;
 
 
     @Override
@@ -43,26 +72,37 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
         textViewUserEmail = (TextView) findViewById(R.id.textViewUserEmail);
         buttonLogout = (Button) findViewById(R.id.buttonLogout);
 
+        buttonDone = (Button) findViewById(R.id.buttonDone);
+
         //displaying logged in user name
         textViewUserEmail.setText("Welcome "+user.getEmail());
         //test
 
         //adding listener to button
-        buttonLogout.setOnClickListener(this);
+
+        //buttonLogout.setOnClickListener(this);
+
+
+        buttonDone.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                HomePage();
+
+            }
+        });
+
+
+
+
 
 
     }
 
-    @Override
-    public void onClick(View view) {
-        //if logout is pressed
-        if(view == buttonLogout){
-            //logging out the user
-            firebaseAuth.signOut();
-            //closing activity
-            finish();
-            //starting login activity
-            startActivity(new Intent(this, LoginPage.class));
-        }
+    private void HomePage() {
+        Intent intent = new Intent(this,meal.class);
+        startActivity(intent);
     }
+
+
 }
+

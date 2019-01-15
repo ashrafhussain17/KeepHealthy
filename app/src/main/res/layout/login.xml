@@ -32,7 +32,6 @@
             android:orientation="vertical"
             android:layout_width="280dp"
             android:layout_height="353dp"
-            android:background="@drawable/signinbackground"
             android:layout_centerHorizontal="true" android:layout_alignParentBottom="true"
             android:layout_marginBottom="8dp"
             app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"

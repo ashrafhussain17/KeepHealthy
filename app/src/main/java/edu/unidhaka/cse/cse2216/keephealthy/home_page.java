@@ -16,7 +16,7 @@ public class home_page extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.login);
+        setContentView(R.layout.home_page_layout);
 
         CalorieTaken = "0 ";
         WaterTaken = "0 ";

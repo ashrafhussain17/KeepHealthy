@@ -16,7 +16,7 @@
 
     <RelativeLayout
             android:layout_width="match_parent"
-                    android:layout_height="200dp">
+            android:layout_height="200dp">
         <LinearLayout
                 android:background="@drawable/gradient_background"
                 android:layout_width="match_parent"
@@ -214,6 +214,14 @@
                 android:text="Logout"
                 android:textSize="15dp"
                 android:id="@+id/buttonLogout"
+                android:layout_gravity="center_horizontal" />
+
+        <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Done"
+                android:textSize="15dp"
+                android:id="@+id/buttonDone"
                 android:layout_gravity="center_horizontal" />
     </LinearLayout>
 

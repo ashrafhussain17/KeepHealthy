@@ -2,7 +2,6 @@ package edu.unidhaka.cse.cse2216.keephealthy;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.WindowManager;
 import android.widget.ListView;
 
@@ -17,7 +16,7 @@ public class meal extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.meal);
+        setContentView(R.layout.meal_layout);
 
         int id= getIntent().getIntExtra("viewid",-1);
         switch (id)
