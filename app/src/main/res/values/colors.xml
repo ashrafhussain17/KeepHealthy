@@ -15,4 +15,7 @@
     <color name="link">#1d3cd4</color>
     <color name="colorAccent">#FF4081</color>
     <color name="black">#000000</color>
+    <color name="toolbarIconColor">#FFFFFF</color>
+    <color name="loginPageBackgroundColor">#FFFFFF</color>
+    <color name="productGridBackgroundColor">#FFFFFF</color>
 </resources>

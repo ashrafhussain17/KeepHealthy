@@ -5,6 +5,20 @@
     <string name="sleep_hours">0 Hours</string>
     <string name="calorie_burnt">0 kKal</string>
 
+    <string name="shr_hint_password">Password</string>
+    <string name="shr_filter_title">Filter</string>
+    <string name="shr_search_title">Search</string>
+    <string name="email_warning">Your email is invalid</string>
+    <string name="password_warning">Your password is invalid</string>
+    <string name="enter_email">Please enter your email</string>
+    <string name="enter_password">Please enter your password</string>
+    <string name="shr_hint_username">Email</string>
+    <string name="shr_app_name">Keep Healthy</string>
+    <string name="shr_button_signin">SIGN IN</string>
+    <string name="shr_button_signup">SIGN UP</string>
+    <string name="shr_button_cancel">Cancel</string>
+    <string name="error_password">Password must contain at least 8 characters.</string>
+
     <string name="action_settings">Settings</string>
     <string-array name="quantity">
         <item>1</item>
