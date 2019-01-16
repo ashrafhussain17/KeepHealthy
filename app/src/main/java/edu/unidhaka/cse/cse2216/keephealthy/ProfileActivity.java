@@ -46,6 +46,8 @@ public class ProfileActivity extends Activity {
     private Button buttonLogout;
 
     private Button buttonDone;
+    private Button birthDate;
+
 
 
     @Override
@@ -73,6 +75,7 @@ public class ProfileActivity extends Activity {
         buttonLogout = (Button) findViewById(R.id.buttonLogout);
 
         buttonDone = (Button) findViewById(R.id.buttonDone);
+        birthDate = (Button) findViewById(R.id.birthdate);
 
         //displaying logged in user name
         textViewUserEmail.setText("Welcome "+user.getEmail());
@@ -91,6 +94,14 @@ public class ProfileActivity extends Activity {
             }
         });
 
+        birthDate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                datePicker();
+
+            }
+        });
+
 
 
 
@@ -100,6 +111,11 @@ public class ProfileActivity extends Activity {
 
     private void HomePage() {
         Intent intent = new Intent(this,meal.class);
+        startActivity(intent);
+    }
+
+    private void datePicker(){
+        Intent intent = new Intent(this,date_picker.class);
         startActivity(intent);
     }
 

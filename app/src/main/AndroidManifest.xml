@@ -11,6 +11,8 @@
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
             android:theme="@style/AppTheme">
+        <activity android:name=".date_picker">
+        </activity>
         <activity
                 android:name=".LoginPage"
                 android:screenOrientation="portrait">
@@ -30,9 +32,8 @@
         </activity>
         <activity android:name=".list_of_exercise">
         </activity>
-
-        <activity android:name=".home_page"></activity>
-        <activity android:name=".meal"></activity>
+        <activity android:name=".home_page"/>
+        <activity android:name=".meal"/>
     </application>
 
 </manifest>
