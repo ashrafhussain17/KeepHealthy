@@ -62,7 +62,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/breakfast"
+                android:background="@drawable/ripple_effect"
                 android:scaleType="center"
                 android:onClick="clicked"
                 android:src="@drawable/fish"
@@ -97,7 +97,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/breakfast"
+                android:background="@drawable/ripple_effect"
                 android:scaleType="center"
                 android:src="@drawable/rice"
                 android:onClick="clicked"
@@ -139,8 +139,7 @@
                 android:layout_marginStart="52dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/breakfast"
-
+                android:background="@drawable/ripple_effect"
                 android:scaleType="center"
                 android:src="@drawable/coffee"
                 android:focusable="true"
@@ -149,8 +148,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.2"
-                tools:ignore="OnClick"/>
+                app:layout_constraintVertical_bias="0.2" tools:ignore="OnClick"/>
 
         <ImageView
                 android:id="@+id/eveningsnackS"
@@ -161,7 +159,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/breakfast"
+                android:background="@drawable/ripple_effect"
                 android:onClick="clicked"
                 android:scaleType="center"
                 android:src="@drawable/glass_cocktail"

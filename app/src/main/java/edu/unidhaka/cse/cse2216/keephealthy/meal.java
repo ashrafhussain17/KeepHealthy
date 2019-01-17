@@ -30,7 +30,7 @@ public class meal extends Activity {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
         //getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         lst= (ListView) findViewById(R.id.listview);
-        Take_a_meal lvd= new Take_a_meal(this,foodname,foodDesc,amount);
+        ListViewData lvd= new ListViewData(this,foodname,foodDesc,amount);
         lst.setAdapter(lvd);
 
     }
