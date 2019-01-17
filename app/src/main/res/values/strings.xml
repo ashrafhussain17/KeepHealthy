@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">KeepHealthy</string>
+    <string name="app_name">Keep Healthy</string>
     <string name="calorie_taken">0 kKal</string>
     <string name="water_taken">0 ml</string>
     <string name="sleep_hours">0 Hours</string>
