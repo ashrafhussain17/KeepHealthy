@@ -1,11 +1,18 @@
 package edu.unidhaka.cse.cse2216.keephealthy;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.annotation.Nullable;
+import android.support.design.button.MaterialButton;
+import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
+import android.text.Editable;
 import android.text.TextUtils;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -21,10 +28,12 @@ public class LoginPage extends Activity  {
 
 
     //defining views
-    private Button buttonSignIn;
-    private EditText editTextEmail;
-    private EditText editTextPassword;
+
     private TextView textViewSignup;
+
+    TextInputEditText passwordEditText,emailEdittext;
+    TextInputLayout passwordTextInput,emailTextInput;
+    MaterialButton buttonSignIn;
 
     //firebase auth object
     private FirebaseAuth firebaseAuth;
@@ -33,13 +42,11 @@ public class LoginPage extends Activity  {
     private ProgressDialog progressDialog;
 
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Log.d("sakib","b4login");
         setContentView(R.layout.login);
-        Log.d("sakib","after login");
-
         //getting firebase auth object
         firebaseAuth = FirebaseAuth.getInstance();
 
@@ -51,33 +58,69 @@ public class LoginPage extends Activity  {
             //opening profile activity
             startActivity(new Intent(getApplicationContext(), ProfileActivity.class));
         }
-        Log.d("sakib","after firebase");
         //initializing views
-        editTextEmail = (EditText) findViewById(R.id.emailtext);
-        editTextPassword = (EditText) findViewById(R.id.passwordtext);
-        buttonSignIn = (Button) findViewById(R.id.signinBtn);
+        emailEdittext = findViewById(R.id.email_edit_text);
+        passwordTextInput = findViewById(R.id.password_text_input);
+        emailTextInput= findViewById(R.id.email_input);
+        passwordEditText = findViewById(R.id.password_edit_text);
+        buttonSignIn = findViewById(R.id.sign_in);
+
         textViewSignup = (TextView) findViewById(R.id.signuplink);
+        emailEdittext.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                emailTextInput.setError(null);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                emailTextInput.setError(null);
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
+        passwordEditText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                passwordEditText.setError(null);
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                passwordEditText.setError(null);
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        });
 
         progressDialog = new ProgressDialog(this);
-
-        //attaching click listener
 
     }
 
     //method for user login
     private void userLogin() {
-        String email = editTextEmail.getText().toString().trim();
-        String password = editTextPassword.getText().toString().trim();
+
+        String email = emailEdittext.getText().toString().trim();
+        String password =  passwordEditText.getText().toString().trim();
 
 
         //checking if email and passwords are empty
         if (TextUtils.isEmpty(email)) {
-            Toast.makeText(this, "Please enter email", Toast.LENGTH_LONG).show();
+            emailTextInput.setError(getString(R.string.email_warning));
+            //Toast.makeText(this, "Please enter email", Toast.LENGTH_LONG).show();
             return;
         }
 
         if (TextUtils.isEmpty(password)) {
-            Toast.makeText(this, "Please enter password", Toast.LENGTH_LONG).show();
+            passwordTextInput.setError(getString(R.string.password_warning));
+            //Toast.makeText(this, "Please enter password", Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -104,28 +147,19 @@ public class LoginPage extends Activity  {
 
     }
 
+
+
     public void click(View view)
     {
         if (view == buttonSignIn) {
-        userLogin();
-    }
+            userLogin();
+        }
 
         if (view == textViewSignup) {
-            finish();
+            //finish();
             startActivity(new Intent(this, Registration.class));
         }
     }
-//    @Override
-//    public void onClick(View view) {
-//        Log.d("sakib","inside onclick");
-//        if (view == buttonSignIn) {
-//            userLogin();
-//        }
-//
-//        if (view == textViewSignup) {
-//            finish();
-//            startActivity(new Intent(this, Registration.class));
-//        }
-//    }
+
 }
 
