@@ -1,7 +1,9 @@
 package edu.unidhaka.cse.cse2216.keephealthy;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.ListView;
 
@@ -33,6 +35,10 @@ public class meal extends Activity {
         ListViewData lvd= new ListViewData(this,foodname,foodDesc,amount);
         lst.setAdapter(lvd);
 
+    }
+    public void clicked(View view)
+    {
+        startActivity(new Intent(this,home_page.class));
     }
 }
 
