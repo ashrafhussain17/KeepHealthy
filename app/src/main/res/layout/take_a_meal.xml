@@ -46,7 +46,8 @@
                 android:layout_marginStart="25dp"
                 android:layout_marginTop="8dp"
                 android:text="Breakfast"
-                android:textSize="15sp"
+                android:textAppearance="@style/TextAppearance.Shrine.Title"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -62,7 +63,7 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/breakfast"
+                android:background="@drawable/ripple_effect"
                 android:scaleType="center"
                 android:onClick="clicked"
                 android:src="@drawable/fish"
@@ -80,7 +81,8 @@
                 android:layout_marginStart="160dp"
                 android:layout_marginTop="8dp"
                 android:text="Lunch"
-                android:textSize="15sp"
+                android:textAppearance="@style/TextAppearance.Shrine.Title"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -97,7 +99,7 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/breakfast"
+                android:background="@drawable/ripple_effect"
                 android:scaleType="center"
                 android:src="@drawable/rice"
                 android:onClick="clicked"
@@ -113,7 +115,8 @@
                 android:layout_marginEnd="35dp"
                 android:layout_marginTop="8dp"
                 android:text="Dinner"
-                android:textSize="15sp"
+                android:textAppearance="@style/TextAppearance.Shrine.Title"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -139,8 +142,7 @@
                 android:layout_marginStart="52dp"
                 android:layout_marginTop="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/breakfast"
-
+                android:background="@drawable/ripple_effect"
                 android:scaleType="center"
                 android:src="@drawable/coffee"
                 android:focusable="true"
@@ -149,8 +151,7 @@
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.2"
-                tools:ignore="OnClick"/>
+                app:layout_constraintVertical_bias="0.2" tools:ignore="OnClick"/>
 
         <ImageView
                 android:id="@+id/eveningsnackS"
@@ -161,8 +162,9 @@
                 android:layout_marginEnd="8dp"
                 android:layout_marginStart="8dp"
                 android:layout_weight="1"
-                android:background="@drawable/breakfast"
+                android:background="@drawable/ripple_effect"
                 android:onClick="clicked"
+
                 android:scaleType="center"
                 android:src="@drawable/glass_cocktail"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -179,7 +181,8 @@
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
                 android:text="Evening Snacks"
-                android:textSize="15sp"
+                android:textAppearance="@style/TextAppearance.Shrine.Title"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -195,7 +198,8 @@
                 android:layout_marginStart="52dp"
                 android:layout_marginTop="8dp"
                 android:text="Morning Snacks"
-                android:textSize="15sp"
+                android:textAppearance="@style/TextAppearance.Shrine.Title"
+                android:textSize="14sp"
                 android:textStyle="bold"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
@@ -211,6 +215,7 @@
             android:layout_height="30dp"
             android:layout_marginLeft="20dp"
             android:text="Total Intake"
+            android:textAppearance="@style/TextAppearance.Shrine.Title"
             android:textSize="20sp"
             android:textStyle="bold" />
 
@@ -232,7 +237,7 @@
             <TextView
 
                     android:layout_margin="15dp"
-
+                    android:textAppearance="@style/TextAppearance.Shrine.Title"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
 

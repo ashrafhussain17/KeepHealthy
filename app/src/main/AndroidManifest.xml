@@ -10,17 +10,10 @@
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/AppTheme">
-        <activity android:name=".date_picker">
-        </activity>
+            android:theme="@style/Theme.Shrine">
         <activity
                 android:name=".LoginPage"
                 android:screenOrientation="portrait">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
         </activity>
         <activity
                 android:name=".Registration"
@@ -34,6 +27,16 @@
         </activity>
         <activity android:name=".home_page"/>
         <activity android:name=".meal"/>
+        <activity android:name=".Take_a_meal"/>
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+        <activity android:name=".DrinkWater">
+        </activity>
     </application>
 
 </manifest>

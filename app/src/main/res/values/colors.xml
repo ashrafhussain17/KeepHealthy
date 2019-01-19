@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#008577</color>
-    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorPrimary">#E0E0E0</color>
+    <color name="colorPrimaryDark">#6facef</color>
     <color name="startblue">#09c6df</color>
     <color name="endblue">#0bccef</color>
     <color name="morning_snacks">#ffffff</color>
@@ -13,9 +13,11 @@
     <color name="downback2">#909190</color>
     <color name="breakfast">#ffffff</color>
     <color name="link">#1d3cd4</color>
+    <color name="ripple">#3F51B5</color>
     <color name="colorAccent">#FF4081</color>
     <color name="black">#000000</color>
     <color name="toolbarIconColor">#FFFFFF</color>
-    <color name="loginPageBackgroundColor">#FFFFFF</color>
+    <color name="loginPageBackgroundColor">#ffffff</color>
+    <color name="colorControlActivated">#FF4081</color>
     <color name="productGridBackgroundColor">#FFFFFF</color>
 </resources>

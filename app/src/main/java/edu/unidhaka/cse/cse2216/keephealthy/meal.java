@@ -1,7 +1,9 @@
 package edu.unidhaka.cse.cse2216.keephealthy;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.WindowManager;
 import android.widget.ListView;
 
@@ -30,9 +32,13 @@ public class meal extends Activity {
         getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_NOTHING);
         //getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
         lst= (ListView) findViewById(R.id.listview);
-        Take_a_meal lvd= new Take_a_meal(this,foodname,foodDesc,amount);
+        ListViewData lvd= new ListViewData(this,foodname,foodDesc,amount);
         lst.setAdapter(lvd);
 
+    }
+    public void clicked(View view)
+    {
+        startActivity(new Intent(this,home_page.class));
     }
 }
 

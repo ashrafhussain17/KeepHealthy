@@ -22,6 +22,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="48dp"
                 android:layout_marginBottom="16dp"
+                android:tint="?android:attr/textColorPrimary"
                 android:src="@drawable/shr_logo"
 
         />
@@ -32,10 +33,12 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginBottom="132dp"
                 android:text="@string/shr_app_name"
+                android:textAppearance="@style/TextAppearance.Shrine.Title"
                 android:textAllCaps="true"
                 android:textSize="16sp"/>
 
         <android.support.design.widget.TextInputLayout
+                style="@style/Widget.Shrine.TextInputLayout"
                 android:layout_width="match_parent"
                 android:id="@+id/email_input"
                 android:layout_height="wrap_content"
@@ -51,6 +54,7 @@
         </android.support.design.widget.TextInputLayout>
 
         <android.support.design.widget.TextInputLayout
+                style="@style/Widget.Shrine.TextInputLayout"
                 android:id="@+id/password_text_input"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
