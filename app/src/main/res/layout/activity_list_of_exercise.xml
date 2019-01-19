@@ -8,58 +8,121 @@
         android:background="#fcfcfc"
         tools:context=".list_of_exercise">
 
-    <android.support.v4.widget.NestedScrollView
+
+    <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:padding="10dp">
+            android:gravity="center"
+            android:orientation="vertical">
 
-        <LinearLayout
+        <ImageView
+                android:layout_width="125dp"
+                android:layout_height="170dp"
+                android:background="#2d2d2d"
+                android:id="@+id/bookthumbnail"
+                android:scaleType="centerCrop"/>
+
+        <TextView
+                android:id="@+id/txttitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Book Title"
+                android:layout_marginTop="10dp"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+        <TextView
+                android:id="@+id/txtCat"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Category"
+                android:background="#edecec"
+                android:padding="8dp"
+                android:layout_marginTop="10dp"/>
+
+        <TextView
+                android:id="@+id/txtDesc"
+                android:textSize="18sp"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description"/>
+
+
+
+
+
+        <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="100dp">
+
+            <EditText
+                    android:id="@+id/enterMinutes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_toLeftOf="@+id/startTimer"
+                    android:hint="@string/enter_minutes"
+                    android:padding="10dp"
+                    android:maxLength="4"
+                    android:inputType="number"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textColorHint="#9E9E9E"
+            />
+
+            <Button
+                    android:id="@+id/startTimer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="#009688"
+                    android:padding="10dp"
+                    android:textColor="#ffffff"
+                    android:textSize="16sp"
+                    android:text="@string/start_timer" />
+
+
+
+        </RelativeLayout>
+
+
+
+
+
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/countdownText"
                 android:gravity="center"
-                android:orientation="vertical">
+                android:layout_gravity="center_horizontal"
+                android:textSize="30sp"
+                android:text="@string/timer"
+                android:layout_marginTop="25dp"
+                android:textStyle="bold"
+                android:textColor="#4CAF50"/>
+        <Button
+                android:id="@+id/resetTimer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:background="#009688"
+                android:padding="10dp"
+                android:textColor="#ffffff"
+                android:textSize="16sp"
+                android:text="@string/reset_timer" />
 
-            <ImageView
-                    android:layout_width="125dp"
-                    android:layout_height="170dp"
-                    android:background="#2d2d2d"
-                    android:id="@+id/bookthumbnail"
-                    android:scaleType="centerCrop"/>
 
-            <TextView
-                    android:id="@+id/txttitle"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Title"
-                    android:layout_marginTop="10dp"
-                    android:textSize="18sp"
-                    android:textStyle="bold"/>
-
-            <TextView
-                    android:id="@+id/txtCat"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Category"
-                    android:background="#edecec"
-                    android:padding="8dp"
-                    android:layout_marginTop="10dp"/>
-
-            <TextView
-                    android:id="@+id/txtDesc"
-                    android:textSize="18sp"
-                    android:layout_marginTop="10dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Description"/>
+    </LinearLayout>
 
 
 
-        </LinearLayout>
-
-
-
-    </android.support.v4.widget.NestedScrollView>
 
 
 </LinearLayout>

@@ -19,6 +19,12 @@
     <string name="shr_button_cancel">Cancel</string>
     <string name="error_password">Password must contain at least 8 characters.</string>
 
+    <string name="enter_minutes">Minutes!</string>
+    <string name="start_timer">Start Timer</string>
+    <string name="stop_timer">Stop Timer</string>
+    <string name="reset_timer">Reset Timer</string>
+    <string name="timer">00:00:00</string>
+
     <string name="action_settings">Settings</string>
     <string-array name="quantity">
         <item>1</item>

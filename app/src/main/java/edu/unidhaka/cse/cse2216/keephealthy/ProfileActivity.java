@@ -36,7 +36,7 @@ import java.util.List;
 
 import static android.Manifest.permission.CAMERA;
 
-public class ProfileActivity extends Activity {
+public class ProfileActivity extends Activity implements View.OnClickListener {
 
     //firebase auth object
     private FirebaseAuth firebaseAuth;
@@ -83,7 +83,12 @@ public class ProfileActivity extends Activity {
 
         //adding listener to button
 
-        //buttonLogout.setOnClickListener(this);
+        buttonLogout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                BackLogin();
+            }
+        });
 
 
         buttonDone.setOnClickListener(new View.OnClickListener() {
@@ -109,8 +114,13 @@ public class ProfileActivity extends Activity {
 
     }
 
+    private void BackLogin() {
+        Intent intent = new Intent(this,LoginPage.class);
+        startActivity(intent);
+    }
+
     private void HomePage() {
-        Intent intent = new Intent(this,meal.class);
+        Intent intent = new Intent(this,home_page.class);
         startActivity(intent);
     }
 
@@ -119,6 +129,9 @@ public class ProfileActivity extends Activity {
         startActivity(intent);
     }
 
+    @Override
+    public void onClick(View v) {
 
+    }
 }
 
