@@ -152,13 +152,13 @@ public class LoginPage extends Activity  {
     public void click(View view)
     {
         if (view == buttonSignIn) {
-            //userLogin();
-            startActivity(new Intent(this,DrinkWater.class));
+            userLogin();
+           // startActivity(new Intent(this,ProfileActivity.class));
         }
 
         if (view == textViewSignup) {
             //finish();
-            startActivity(new Intent(this, Take_a_meal.class));
+            startActivity(new Intent(this, LoginPage.class));
         }
     }
 

@@ -83,12 +83,15 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
 
         //adding listener to button
 
-        buttonLogout.setOnClickListener(new View.OnClickListener() {
+
+        /*buttonLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 BackLogin();
             }
         });
+        */
+        buttonLogout.setOnClickListener(this);
 
 
         buttonDone.setOnClickListener(new View.OnClickListener() {
@@ -114,10 +117,23 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
 
     }
 
-    private void BackLogin() {
+    public void onClick(View view) {
+        //if logout is pressed
+        if(view == buttonLogout){
+            //logging out the user
+            firebaseAuth.signOut();
+            //closing activity
+            finish();
+            //starting login activity
+            startActivity(new Intent(this, LoginPage.class));
+        }
+    }
+
+ /*   private void BackLogin() {
         Intent intent = new Intent(this,LoginPage.class);
         startActivity(intent);
     }
+    */
 
     private void HomePage() {
         Intent intent = new Intent(this,home_page.class);
@@ -129,9 +145,6 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
         startActivity(intent);
     }
 
-    @Override
-    public void onClick(View v) {
 
-    }
 }
 
