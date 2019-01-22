@@ -31,6 +31,8 @@ import android.view.View;
 import android.widget.*;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 import java.io.File;
@@ -50,10 +52,18 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
     private TextView nickname;
     private TextView height;
     private TextView weight;
-    private Button buttonLogout;
 
+    private EditText name;
+    private Spinner sex;
+    private EditText uheight;
+    private EditText uweight;
+
+
+    private Button buttonLogout;
     private Button buttonDone;
-    private Button birthDate;
+    private TextView birthDate;
+    private Button buttonSave;
+    private DatabaseReference reference;
 
     private static final int PERMISSION_CODE = 1000;
     private static final int IMAGE_CAPTURE_CODE = 1001;
@@ -69,6 +79,27 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        reference = FirebaseDatabase.getInstance().getReference();
+
+        buttonSave = (Button) findViewById(R.id.buttonSave);
+        name = (EditText) findViewById(R.id.nickname);
+        uheight = (EditText) findViewById(R.id.heightvalue);
+        uweight = (EditText) findViewById(R.id.weightvalue);
+        sex = (Spinner) findViewById(R.id.sex);
+
+        buttonSave.setOnClickListener(new View.OnClickListener() {
+            @TargetApi(Build.VERSION_CODES.LOLLIPOP)
+            @Override
+            public void onClick(View v) {
+                Users users = new Users(name.getText().toString(), sex.getTransitionName(),
+                        uheight.getText().toString(),uweight.getText().toString());
+                reference.child("room").push().setValue(users);
+                finish();
+            }
+        });
+
+
 
         //initializing firebase authentication object
         firebaseAuth = FirebaseAuth.getInstance();
@@ -94,7 +125,9 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
         buttonLogout = (Button) findViewById(R.id.buttonLogout);
 
         buttonDone = (Button) findViewById(R.id.buttonDone);
-        birthDate = (Button) findViewById(R.id.birthdate);
+
+
+        birthDate = (TextView) findViewById(R.id.birthdate);
 
 
         mImageView = findViewById(R.id.image_view);
@@ -128,12 +161,11 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
         });
 
 
-
         String str1 = height.getText().toString();
         String str2 = weight.getText().toString();
         String str3 = nickname.getText().toString();
 
-        if(TextUtils.isEmpty(str1)){
+       if(TextUtils.isEmpty(str1)){
             height.setError("Please enter your weight");
             height.requestFocus();
         }
@@ -147,6 +179,7 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
             nickname.setError("Please enter your Nickname");
             nickname.requestFocus();
         }
+
 
         //displaying logged in user name
         textViewUserEmail.setText("Welcome "+user.getEmail());
@@ -192,8 +225,10 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
     }
 
     private void HomePage() {
-        Intent intent = new Intent(this,home_page.class);
-        startActivity(intent);
+
+
+            Intent intent = new Intent(this, home_page.class);
+            startActivity(intent);
     }
 
     private void datePicker(){
