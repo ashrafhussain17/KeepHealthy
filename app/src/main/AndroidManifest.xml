@@ -21,17 +21,29 @@
         </activity>
         <activity
                 android:name=".Registration"
+                android:label="Registration"
                 android:screenOrientation="portrait">
         </activity>
         <activity android:name=".ProfileActivity">
         </activity>
-        <activity android:name=".exercise">
+        <activity android:name=".exercise"
+                  android:label="Exercise">
         </activity>
         <activity android:name=".list_of_exercise">
         </activity>
-        <activity android:name=".home_page"/>
-        <activity android:name=".meal"/>
-        <activity android:name=".Take_a_meal"/>
+        <activity android:name=".home_page"
+                  android:label="Home Page"/>
+
+        <activity android:name=".meal"
+                  android:parentActivityName=".Take_a_meal"/>
+
+        <activity android:name=".Take_a_meal"
+                  android:label="Take a meal"
+                  android:parentActivityName=".home_page">
+            <meta-data
+                    android:name="android.support.PARENT_ACTIVITY"
+                    android:value=".home_page" />
+        </activity>
         <activity android:name=".SplashScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
@@ -39,7 +51,8 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name=".DrinkWater">
+        <activity android:name=".DrinkWater"
+                  android:parentActivityName=".home_page">
         </activity>
         <activity android:name=".date_picker"/>
     </application>
