@@ -6,14 +6,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".meal">
+    <include
+            layout="@layout/toolbar"
+            android:id="@+id/toolbar" android:layout_height="0dp" android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"/>
 
     <RelativeLayout
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
             android:layout_height="50dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
+            android:layout_marginTop="68dp"
             android:background="@drawable/search_background"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,7 +30,7 @@
                 android:layout_alignParentTop="true"
                 android:layout_marginStart="14dp"
                 android:layout_marginTop="8dp"
-                android:src="@drawable/ic_search_black_24dp" />
+                android:src="@drawable/ic_search_black_24dp"/>
 
         <EditText
                 android:layout_width="match_parent"
@@ -39,7 +42,7 @@
                 android:gravity="center|left"
                 android:layout_toRightOf="@+id/search_icon"
                 android:backgroundTint="@color/breakfast"
-                android:hint="Search" />
+                android:hint="Search"/>
 
     </RelativeLayout>
 
@@ -95,7 +98,7 @@
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
                 android:layout_marginEnd="36dp"
-                android:onClick="clicked"
+
                 android:layout_marginStart="8dp"
                 android:background="@drawable/addfood_back"
                 android:text="Add Food"
@@ -153,7 +156,7 @@
                     android:layout_weight="1"
                     android:layout_width="191dp"
                     android:textAppearance="@style/TextAppearance.Shrine.Title"
-                    android:layout_height="60dp" />
+                    android:layout_height="60dp"/>
             <TextView
                     android:gravity="center"
                     android:text="800 cal"
@@ -162,7 +165,7 @@
                     android:textSize="20sp"
                     android:layout_weight="1"
                     android:layout_width="191dp"
-                    android:layout_height="60dp" />
+                    android:layout_height="60dp"/>
 
         </LinearLayout>
 

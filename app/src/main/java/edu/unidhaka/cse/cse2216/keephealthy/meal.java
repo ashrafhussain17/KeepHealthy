@@ -3,11 +3,14 @@ package edu.unidhaka.cse.cse2216.keephealthy;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.ListView;
 
-public class meal extends Activity {
+public class meal extends AppCompatActivity {
 
     ListView lst;
     String [] foodname={"Rice","Apple","Sweet"};
@@ -19,6 +22,10 @@ public class meal extends Activity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.meal_layout);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
 
         int id= getIntent().getIntExtra("viewid",-1);
         switch (id)
@@ -36,9 +43,6 @@ public class meal extends Activity {
         lst.setAdapter(lvd);
 
     }
-    public void clicked(View view)
-    {
-        startActivity(new Intent(this,home_page.class));
-    }
+
 }
 

@@ -1,10 +1,16 @@
 <resources>
     <string name="app_name">Keep Healthy</string>
     <string name="calorie_taken">0 kKal</string>
+    <string name="profile">Profile</string>
+    <string name="settings">Settings</string>
+    <string name="log_out">Log out</string>
     <string name="water_taken">0 ml</string>
     <string name="sleep_hours">0 Hours</string>
+    <string name="nav_open_drawer">open drawer</string>
+    <string name="nav_close_drawer">close drawer</string>
     <string name="calorie_burnt">0 kKal</string>
-
+    <string name="user_name">"Alias"</string>
+    <string name="user_email">"Alias.com"</string>
     <string name="shr_hint_password">Password</string>
     <string name="shr_filter_title">Filter</string>
     <string name="shr_search_title">Search</string>

@@ -1,348 +1,369 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:app="http://schemas.android.com/apk/res-auto"
-              xmlns:tools="http://schemas.android.com/tools"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:background="@color/back"
-              tools:context=".Registration" android:orientation="vertical">
+
+<android.support.v4.widget.DrawerLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/drawer_layout"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
     <LinearLayout
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:textAppearance="@style/TextAppearance.Shrine.Title"
-            android:background="@drawable/search_background"
-            android:orientation="vertical"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="200dp">
+            android:layout_height="match_parent"
+            android:background="@color/breakfast"
+            tools:context=".Registration" android:orientation="vertical">
+
+        <include
+                layout="@layout/toolbar"
+                android:id="@+id/toolbar"/>
 
         <LinearLayout
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="7dp"
-                android:orientation="horizontal"
+                android:layout_marginTop="10dp"
+                android:textAppearance="@style/TextAppearance.Shrine.Title"
+                android:background="@drawable/search_background"
+                android:orientation="vertical"
                 android:layout_width="match_parent"
-                android:layout_height="40dp">
-            <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_marginRight="2dp"
-                    android:layout_width="match_parent"
-                    android:background="@drawable/home"
-                    android:layout_height="match_parent">
+                android:layout_height="200dp">
 
-                <TextView
-                        android:text="Meal"
-                        android:id="@+id/mealid"
-                        android:textSize="20sp"
-                        android:textAlignment="center"
-                        android:gravity="center"
+            <LinearLayout
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                <LinearLayout
                         android:layout_weight="1"
+                        android:layout_marginRight="2dp"
                         android:layout_width="match_parent"
-                        android:layout_height="40dp" />
+                        android:background="@drawable/home"
+                        android:layout_height="match_parent">
+
+                    <TextView
+                            android:text="Meal"
+                            android:id="@+id/mealid"
+                            android:textSize="20sp"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_marginLeft="2dp"
+                        android:background="@drawable/homeright"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <TextView
+                            android:gravity="center"
+                            android:text="800 cal"
+                            android:id="@+id/mealamount"
+                            android:textSize="20sp"
+                            android:layout_weight="1"
+                            android:layout_width="191dp"
+                            android:layout_height="40dp"/>
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
             <LinearLayout
-                    android:layout_weight="1"
-                    android:layout_marginLeft="2dp"
-                    android:background="@drawable/homeright"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent">
-
-                <TextView
-                        android:gravity="center"
-                        android:text="800 cal"
-                        android:id="@+id/mealamount"
-                        android:textSize="20sp"
+                    android:layout_height="40dp">
+                <LinearLayout
                         android:layout_weight="1"
-                        android:layout_width="191dp"
-                        android:layout_height="40dp" />
+                        android:layout_marginRight="2dp"
+                        android:layout_width="match_parent"
+                        android:background="@drawable/home"
+                        android:layout_height="match_parent">
+
+                    <TextView
+                            android:text="Burnt"
+                            android:textSize="20sp"
+                            android:id="@+id/burntid"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_marginLeft="2dp"
+                        android:background="@drawable/homeright"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <TextView
+                            android:gravity="center"
+                            android:text="800 cal"
+                            android:id="@+id/burntamount"
+                            android:textSize="20sp"
+                            android:layout_weight="1"
+                            android:layout_width="191dp"
+                            android:layout_height="40dp"/>
+
+                </LinearLayout>
+
 
             </LinearLayout>
 
+            <LinearLayout
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_marginRight="2dp"
+                        android:layout_width="match_parent"
+                        android:background="@drawable/home"
+                        android:layout_height="match_parent">
+
+                    <TextView
+                            android:text="Water"
+                            android:textSize="20sp"
+                            android:id="@+id/waterid"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_marginLeft="2dp"
+                        android:background="@drawable/homeright"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <TextView
+                            android:gravity="center"
+                            android:text="800 cal"
+                            android:id="@+id/wateramount"
+                            android:textSize="20sp"
+                            android:layout_weight="1"
+                            android:layout_width="191dp"
+                            android:layout_height="40dp"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="7dp"
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+                <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_marginRight="2dp"
+                        android:layout_width="match_parent"
+                        android:background="@drawable/home"
+                        android:layout_height="match_parent">
+
+                    <TextView
+                            android:text="Sleep"
+                            android:textSize="20sp"
+                            android:id="@+id/sleepid"
+                            android:textAlignment="center"
+                            android:gravity="center"
+                            android:layout_weight="1"
+                            android:layout_width="match_parent"
+                            android:layout_height="40dp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_weight="1"
+                        android:layout_marginLeft="2dp"
+                        android:background="@drawable/homeright"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                    <TextView
+                            android:gravity="center"
+                            android:text="800 cal"
+                            android:id="@+id/sleepamount"
+                            android:textSize="20sp"
+                            android:layout_weight="1"
+                            android:layout_width="191dp"
+                            android:layout_height="40dp"/>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
 
         </LinearLayout>
 
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/take_a_meal_id"
+                android:onClick="clicked"
+                android:textAppearance="@style/TextAppearance.Shrine.Title"
+                android:background="@drawable/search_background"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="40dp">
-            <LinearLayout
+                android:layout_height="100dp">
+            <TextView
+                    android:text="Take a meal"
+                    android:textSize="20sp"
+                    android:textAlignment="center"
+                    android:gravity="center"
                     android:layout_weight="1"
-                    android:layout_marginRight="2dp"
-                    android:layout_width="match_parent"
-                    android:background="@drawable/home"
-                    android:layout_height="match_parent">
+                    android:layout_width="191dp"
+                    android:textAppearance="@style/TextAppearance.Shrine.Title"
+                    android:layout_height="45dp" android:id="@+id/mealText"/>
 
-                <TextView
-                        android:text="Burnt"
-                        android:textSize="20sp"
-                        android:id="@+id/burntid"
-                        android:textAlignment="center"
-                        android:gravity="center"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
+                    android:gravity="center|top"
+                    android:text="800 cal"
+                    android:textAppearance="@style/TextAppearance.Shrine.Title"
+                    android:textSize="20sp"
                     android:layout_weight="1"
-                    android:layout_marginLeft="2dp"
-                    android:background="@drawable/homeright"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_width="191dp"
+                    android:layout_height="40dp" tools:layout_editor_absoluteX="0dp"
+                    tools:ignore="MissingConstraints" android:id="@+id/mealQuantity"
+                    app:layout_constraintTop_toBottomOf="@+id/mealText" android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
 
-                <TextView
-                        android:gravity="center"
-                        android:text="800 cal"
-                        android:id="@+id/burntamount"
-                        android:textSize="20sp"
-                        android:layout_weight="1"
-                        android:layout_width="191dp"
-                        android:layout_height="40dp" />
+            <pl.droidsonroids.gif.GifImageView
+                    android:layout_width="148dp"
+                    android:layout_height="62dp"
+                    android:src="@drawable/meal"
 
-            </LinearLayout>
+                    app:layout_constraintStart_toEndOf="@+id/mealQuantity" android:layout_marginStart="8dp"
+                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="8dp" app:layout_constraintHorizontal_bias="1.0"/>
 
+        </android.support.constraint.ConstraintLayout>
 
-        </LinearLayout>
-
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="7dp"
+                android:id="@+id/excercise_id"
+                android:onClick="clicked"
+                android:layout_marginTop="10dp"
+                android:textAppearance="@style/TextAppearance.Shrine.Title"
+                android:background="@drawable/search_background"
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
-                android:layout_height="40dp">
-            <LinearLayout
+                android:layout_height="100dp">
+            <TextView
+                    android:text="Exercise"
+                    android:textSize="20sp"
+                    android:textAlignment="center"
+                    android:gravity="center"
                     android:layout_weight="1"
-                    android:layout_marginRight="2dp"
-                    android:layout_width="match_parent"
-                    android:background="@drawable/home"
-                    android:layout_height="match_parent">
+                    android:layout_width="191dp"
+                    android:textAppearance="@style/TextAppearance.Shrine.Title"
+                    android:layout_height="45dp" android:id="@+id/exerciseText"/>
 
-                <TextView
-                        android:text="Water"
-                        android:textSize="20sp"
-                        android:id="@+id/waterid"
-                        android:textAlignment="center"
-                        android:gravity="center"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
+                    android:gravity="center|top"
+                    android:text="800 cal"
+                    android:textAppearance="@style/TextAppearance.Shrine.Title"
+                    android:textSize="20sp"
                     android:layout_weight="1"
-                    android:layout_marginLeft="2dp"
-                    android:background="@drawable/homeright"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_width="191dp"
+                    android:layout_height="40dp" tools:layout_editor_absoluteX="0dp"
+                    tools:ignore="MissingConstraints" android:id="@+id/exerciseQuantity"
+                    app:layout_constraintTop_toBottomOf="@+id/exerciseText" android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
 
-                <TextView
-                        android:gravity="center"
-                        android:text="800 cal"
-                        android:id="@+id/wateramount"
-                        android:textSize="20sp"
-                        android:layout_weight="1"
-                        android:layout_width="191dp"
-                        android:layout_height="40dp" />
+            <pl.droidsonroids.gif.GifImageView
+                    android:layout_width="137dp"
+                    android:layout_height="83dp"
+                    android:src="@drawable/exercise"
+                    app:layout_constraintStart_toEndOf="@+id/exerciseQuantity" android:layout_marginStart="8dp"
+                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                    app:layout_constraintHorizontal_bias="1.0" app:layout_constraintVertical_bias="0.529"/>
 
-            </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
 
-
-        </LinearLayout>
-
-        <LinearLayout
+        <android.support.constraint.ConstraintLayout
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
-                android:layout_marginTop="7dp"
+                android:layout_marginTop="10dp"
+                android:id="@+id/drink_water_id"
+                android:onClick="clicked"
+                android:textAppearance="@style/TextAppearance.Shrine.Title"
+                android:background="@drawable/search_background"
                 android:orientation="horizontal"
+
                 android:layout_width="match_parent"
-                android:layout_height="40dp">
-            <LinearLayout
+                android:layout_height="100dp">
+            <TextView
+                    android:text="Drink Water"
+                    android:textSize="20sp"
+                    android:textAlignment="center"
+                    android:gravity="center"
                     android:layout_weight="1"
-                    android:layout_marginRight="2dp"
-                    android:layout_width="match_parent"
-                    android:background="@drawable/home"
-                    android:layout_height="match_parent">
+                    android:layout_width="191dp"
+                    android:textAppearance="@style/TextAppearance.Shrine.Title"
+                    android:layout_height="45dp" android:id="@+id/drinktext"/>
 
-                <TextView
-                        android:text="Sleep"
-                        android:textSize="20sp"
-                        android:id="@+id/sleepid"
-                        android:textAlignment="center"
-                        android:gravity="center"
-                        android:layout_weight="1"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp" />
-
-            </LinearLayout>
-
-            <LinearLayout
+            <TextView
+                    android:gravity="center|top"
+                    android:text="800 cal"
+                    android:textAppearance="@style/TextAppearance.Shrine.Title"
+                    android:textSize="20sp"
                     android:layout_weight="1"
-                    android:layout_marginLeft="2dp"
-                    android:background="@drawable/homeright"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent">
+                    android:layout_width="191dp"
+                    android:layout_height="40dp" tools:layout_editor_absoluteX="0dp"
+                    tools:ignore="MissingConstraints" android:id="@+id/drinkQuantity"
+                    app:layout_constraintTop_toBottomOf="@+id/drinktext" android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"/>
 
-                <TextView
-                        android:gravity="center"
-                        android:text="800 cal"
-                         android:id="@+id/sleepamount"
-                        android:textSize="20sp"
-                        android:layout_weight="1"
-                        android:layout_width="191dp"
-                        android:layout_height="40dp" />
+            <pl.droidsonroids.gif.GifImageView
+                    android:layout_width="117dp"
+                    android:layout_height="match_parent"
+                    android:src="@drawable/glass"
 
-            </LinearLayout>
+                    app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                    app:layout_constraintStart_toEndOf="@+id/drinkQuantity" android:layout_marginStart="8dp"
+                    app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintHorizontal_bias="0.8" app:layout_constraintVertical_bias="0.0"/>
 
+        </android.support.constraint.ConstraintLayout>
 
-        </LinearLayout>
 
     </LinearLayout>
 
-    <android.support.constraint.ConstraintLayout
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:textAppearance="@style/TextAppearance.Shrine.Title"
-            android:background="@drawable/search_background"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="100dp">
-        <TextView
-                android:text="Take a meal"
-                android:textSize="20sp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:layout_width="191dp"
-                android:textAppearance="@style/TextAppearance.Shrine.Title"
-                android:layout_height="45dp" android:id="@+id/mealText"/>
+    <android.support.design.widget.NavigationView
+            android:id="@+id/nav_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/navigation"
+            app:menu="@menu/navigation_menu" />
 
-        <TextView
-                android:gravity="center|top"
-                android:text="800 cal"
-                android:textAppearance="@style/TextAppearance.Shrine.Title"
-                android:textSize="20sp"
-                android:layout_weight="1"
-                android:layout_width="191dp"
-                android:layout_height="40dp" tools:layout_editor_absoluteX="0dp"
-                tools:ignore="MissingConstraints" android:id="@+id/mealQuantity"
-                app:layout_constraintTop_toBottomOf="@+id/mealText" android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
-        <pl.droidsonroids.gif.GifImageView
-                android:layout_width="148dp"
-                android:layout_height="62dp"
-                android:src="@drawable/meal"
-
-                app:layout_constraintStart_toEndOf="@+id/mealQuantity" android:layout_marginStart="8dp"
-                app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                android:layout_marginEnd="8dp" app:layout_constraintHorizontal_bias="1.0"/>
-
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:textAppearance="@style/TextAppearance.Shrine.Title"
-            android:background="@drawable/search_background"
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="100dp">
-        <TextView
-                android:text="Exercise"
-                android:textSize="20sp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:layout_width="191dp"
-                android:textAppearance="@style/TextAppearance.Shrine.Title"
-                android:layout_height="45dp" android:id="@+id/exerciseText"/>
-
-        <TextView
-                android:gravity="center|top"
-                android:text="800 cal"
-                android:textAppearance="@style/TextAppearance.Shrine.Title"
-                android:textSize="20sp"
-                android:layout_weight="1"
-                android:layout_width="191dp"
-                android:layout_height="40dp" tools:layout_editor_absoluteX="0dp"
-                tools:ignore="MissingConstraints" android:id="@+id/exerciseQuantity"
-                app:layout_constraintTop_toBottomOf="@+id/exerciseText" android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
-        <pl.droidsonroids.gif.GifImageView
-                android:layout_width="137dp"
-                android:layout_height="83dp"
-                android:src="@drawable/exercise"
-                app:layout_constraintStart_toEndOf="@+id/exerciseQuantity" android:layout_marginStart="8dp"
-                app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                app:layout_constraintHorizontal_bias="1.0" app:layout_constraintVertical_bias="0.529"/>
-
-    </android.support.constraint.ConstraintLayout>
-
-    <android.support.constraint.ConstraintLayout
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:textAppearance="@style/TextAppearance.Shrine.Title"
-            android:background="@drawable/search_background"
-            android:orientation="horizontal"
-
-            android:layout_width="match_parent"
-            android:layout_height="100dp">
-        <TextView
-                android:text="Drink Water"
-                android:textSize="20sp"
-                android:textAlignment="center"
-                android:gravity="center"
-                android:layout_weight="1"
-                android:layout_width="191dp"
-                android:textAppearance="@style/TextAppearance.Shrine.Title"
-                android:layout_height="45dp" android:id="@+id/drinktext"/>
-
-        <TextView
-                android:gravity="center|top"
-                android:text="800 cal"
-                android:textAppearance="@style/TextAppearance.Shrine.Title"
-                android:textSize="20sp"
-                android:layout_weight="1"
-                android:layout_width="191dp"
-                android:layout_height="40dp" tools:layout_editor_absoluteX="0dp"
-                tools:ignore="MissingConstraints" android:id="@+id/drinkQuantity"
-                app:layout_constraintTop_toBottomOf="@+id/drinktext" android:layout_marginBottom="8dp"
-                app:layout_constraintBottom_toBottomOf="parent"/>
-
-        <pl.droidsonroids.gif.GifImageView
-                android:layout_width="117dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/glass"
-
-                app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-                app:layout_constraintStart_toEndOf="@+id/drinkQuantity" android:layout_marginStart="8dp"
-                app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintHorizontal_bias="0.8" app:layout_constraintVertical_bias="0.0"/>
-
-    </android.support.constraint.ConstraintLayout>
-
-
-
-
-
-
-
-
-
-</LinearLayout>
+</android.support.v4.widget.DrawerLayout>
 
