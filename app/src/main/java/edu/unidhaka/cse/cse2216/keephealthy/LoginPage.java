@@ -24,7 +24,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class LoginPage extends Activity  {
+public class LoginPage extends Activity implements View.OnClickListener {
 
 
     //defining views
@@ -66,41 +66,12 @@ public class LoginPage extends Activity  {
         buttonSignIn = findViewById(R.id.sign_in);
 
         textViewSignup = (TextView) findViewById(R.id.signuplink);
-        emailEdittext.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                emailTextInput.setError(null);
-            }
 
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                emailTextInput.setError(null);
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
-        passwordEditText.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-                passwordEditText.setError(null);
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-                passwordEditText.setError(null);
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-
-            }
-        });
 
         progressDialog = new ProgressDialog(this);
+
+        buttonSignIn.setOnClickListener(this);
+        textViewSignup.setOnClickListener(this);
 
     }
 
@@ -147,18 +118,16 @@ public class LoginPage extends Activity  {
 
     }
 
-
-
-    public void click(View view)
+    @Override
+    public void onClick(View view)
     {
         if (view == buttonSignIn) {
-            //userLogin();
-            startActivity(new Intent(this,home_page.class));
+            userLogin();
         }
 
         if (view == textViewSignup) {
-            //finish();
-            startActivity(new Intent(this, Take_a_meal.class));
+            finish();
+            startActivity(new Intent(this, Registration.class));
         }
     }
 

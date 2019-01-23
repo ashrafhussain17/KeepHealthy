@@ -1,5 +1,6 @@
 package edu.unidhaka.cse.cse2216.keephealthy;
 
+
 import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -21,7 +22,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Registration extends Activity {
+public class Registration extends Activity implements View.OnClickListener {
 
     //defining view objects
 
@@ -60,8 +61,12 @@ public class Registration extends Activity {
         passwordTextInput = findViewById(R.id.password_text_input);
         passwordEditText = findViewById(R.id.password_edit_text);
         buttonSignup = findViewById(R.id.sign_up);
+        textViewSignin = (TextView)findViewById(R.id.registerSignin);
 
         progressDialog = new ProgressDialog(this);
+
+        buttonSignup.setOnClickListener(this);
+        textViewSignin.setOnClickListener(this);
 
 
     }
@@ -75,13 +80,13 @@ public class Registration extends Activity {
         //checking if email and passwords are empty
         if (TextUtils.isEmpty(email)) {
             passwordTextInput.setError(getString(R.string.enter_email));
-            //Toast.makeText(this,"Please enter email",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Please enter email",Toast.LENGTH_LONG).show();
             return;
         }
 
         if (TextUtils.isEmpty(password)) {
             passwordTextInput.setError(getString(R.string.enter_password));
-            //Toast.makeText(this,"Please enter password",Toast.LENGTH_LONG).show();
+            Toast.makeText(this,"Please enter password",Toast.LENGTH_LONG).show();
             return;
         }
 
@@ -125,12 +130,15 @@ public class Registration extends Activity {
 //        }
 
 
-    public void click(View view) {
-        if (view == buttonSignup) {
+
+    @Override
+    public void onClick(View view) {
+        if(view == buttonSignup){
             registerUser();
         }
-        startActivity(new Intent(this, ProfileActivity.class));
-
+        if(view == textViewSignin){
+            startActivity(new Intent(this, LoginPage.class));
+        }
 
     }
 }

@@ -83,6 +83,12 @@
 
         </RelativeLayout>
 
+        <TextView android:layout_width="match_parent"
+                  android:text="Already Registered ? Sign In here"
+                  android:textAlignment="center"
+                  android:id="@+id/registerSignin"
+                  android:layout_height="wrap_content"/>
+
 
 
     </LinearLayout>
