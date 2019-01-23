@@ -25,9 +25,14 @@
     <string name="shr_button_cancel">Cancel</string>
     <string name="error_password">Password must contain at least 8 characters.</string>
 
+    <string name="enter_minutes">Minutes!</string>
+    <string name="start_timer">Start Timer</string>
+    <string name="stop_timer">Stop Timer</string>
+    <string name="reset_timer">Reset Timer</string>
+    <string name="timer">00:00:00</string>
+
     <string name="action_settings">Settings</string>
     <string-array name="quantity">
-        <item>Quantity</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -38,5 +43,10 @@
         <item>Male</item>
         <item>Female</item>
     </string-array>
+    <string name="hello_world">Hello world!</string>
+    <string name="date_label_set">Press the button to set the date</string>
+    <string name="date_button_set">Set Date</string>
+    <string name="date_view_set">The Date is: </string>
+    <string name="date_selected"></string>
 
 </resources>

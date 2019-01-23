@@ -153,7 +153,7 @@ public class LoginPage extends Activity  {
     {
         if (view == buttonSignIn) {
             //userLogin();
-            startActivity(new Intent(this,home_page.class));
+            startActivity(new Intent(this,DrinkWater.class));
         }
 
         if (view == textViewSignup) {

@@ -19,13 +19,15 @@ public class exercise extends Activity {
             setContentView(R.layout.activity_exercise);
 
             lstBook = new ArrayList<>();
-            lstBook.add(new type_of_exercise("The Vegitarian","Categorie Book","Description book",R.drawable.ss22));
-            lstBook.add(new type_of_exercise("The Wild Robot","Categorie Book","Description book",R.drawable.ss22));
-            lstBook.add(new type_of_exercise("Maria Semples","Categorie Book","Description book",R.drawable.ss22));
-            lstBook.add(new type_of_exercise("The Martian","Categorie Book","Description book",R.drawable.ss22));
-            lstBook.add(new type_of_exercise("He Died with...","Categorie Book","Description book",R.drawable.ss22));
-            lstBook.add(new type_of_exercise("The Vegitarian","Categorie Book","Description book",R.drawable.ss22));
-            lstBook.add(new type_of_exercise("The Wild Robot","Categorie Book","Description book",R.drawable.ss22));
+            lstBook.add(new type_of_exercise("Hiking","Good Exercise",R.drawable.hiking));
+            lstBook.add(new type_of_exercise("Walking","Good Exercise",R.drawable.walk));
+            lstBook.add(new type_of_exercise("Running","Good Exercise",R.drawable.running));
+            lstBook.add(new type_of_exercise("Badminton","Good Exercise",R.drawable.badminton));
+            lstBook.add(new type_of_exercise("Football","Good Exercise",R.drawable.football));
+            lstBook.add(new type_of_exercise("Cycling","Good Exercise",R.drawable.cycle));
+            lstBook.add(new type_of_exercise("Boxing","Good Exercise",R.drawable.boxing));
+            lstBook.add(new type_of_exercise("Archery","Good Exercise",R.drawable.archery));
+
 
 
             RecyclerView myrv = (RecyclerView) findViewById(R.id.recyclerview_id);

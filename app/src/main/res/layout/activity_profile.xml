@@ -14,6 +14,18 @@
 
 
 
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Large Text"
+            android:textColor="#ff0000"
+            android:textSize="15dp"
+            android:id="@+id/textViewUserEmail"
+            android:layout_gravity="center_horizontal" />
+
+
+
     <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="200dp">
@@ -22,11 +34,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
                 android:orientation="vertical">
-            <ImageView android:layout_width="match_parent"
-                       android:layout_height="100dp"
+            <ImageView android:layout_width="150dp"
+                       android:id="@+id/image_view"
+                       android:layout_height="120dp"
                        android:layout_gravity="center_horizontal"
                        android:layout_marginTop="10dp"
-                       android:src="@drawable/ss22"/>
+                       android:src="@mipmap/imagsource"/>
         </LinearLayout>
 
         <ImageView
@@ -36,10 +49,11 @@
                 android:layout_marginTop="120dp"
                 android:src="@drawable/circle_shape"/>
 
-        <ImageView android:layout_width="30dp"
-                   android:layout_height="30dp"
-                   android:layout_marginLeft="60dp"
-                   android:layout_marginTop="130dp"
+        <ImageButton android:layout_width="40dp"
+                     android:id="@+id/capture_image_btn"
+                   android:layout_height="40dp"
+                   android:layout_marginLeft="55dp"
+                   android:layout_marginTop="125dp"
                    android:src="@drawable/ic_add_a_photo_black_24dp"/>
 
     </RelativeLayout>
@@ -47,7 +61,24 @@
     <TextView android:layout_width="wrap_content"
               android:layout_height="wrap_content"
               android:textColorHighlight="@color/endblue"
-              android:textColor="@color/startblue"
+              android:textColor="@color/light_green"
+              android:layout_gravity="center"
+              android:textSize="20dp"
+              android:text="Nickname"/>
+
+    <EditText
+            android:id="@+id/nickname"
+            android:hint="Enter Your Nickname"
+            android:paddingLeft="30dp"
+            android:textSize="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:textColorHighlight="@color/endblue"
+              android:textColor="@color/light_green"
               android:textSize="20dp"
               android:text="User Information"
               android:textAlignment="center"/>
@@ -73,21 +104,23 @@
                 app:cardElevation="8dp"
                 app:cardCornerRadius="8dp">
 
-            <LinearLayout android:layout_width="wrap_content"
-                          android:orientation="vertical"
-                          android:layout_gravity="center_horizontal"
-                          android:layout_margin="16dp"
-                          android:layout_height="wrap_content">
+           <TextView
+                   android:layout_marginTop="6dp"
+                   android:layout_marginLeft="40dp"
+                   android:text="Gender"
+                   android:textSize="20dp"
+                   android:layout_width="wrap_content"
+                     android:layout_height="wrap_content"/>
+            <Spinner
+                    android:scrollbarSize="20dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="35dp"
+                    android:entries="@array/gender_type"
+                    android:layout_width="wrap_content"
+                     android:layout_height="wrap_content">
 
-                <Button android:id="@+id/gender"
-                        android:layout_width="wrap_content"
-                        android:text="Gender"
-                        android:layout_height="wrap_content"/>
+            </Spinner>
 
-
-
-
-            </LinearLayout>
 
 
         </android.support.v7.widget.CardView>
@@ -106,13 +139,22 @@
             <LinearLayout android:layout_width="wrap_content"
                           android:orientation="vertical"
                           android:layout_gravity="center_horizontal"
-                          android:layout_margin="16dp"
                           android:layout_height="wrap_content">
-
-                <Button android:id="@+id/height"
-                        android:layout_width="wrap_content"
+                <TextView
+                        android:id="@+id/height"
                         android:text="Height"
+                        android:textSize="20dp"
+                          android:layout_width="wrap_content"
+                          android:layout_height="wrap_content"/>
+
+                <EditText
+                        android:id="@+id/heightvalue"
+                        android:hint=" In CMS"
+                        android:layout_width="wrap_content"
+                        android:textSize="15dp"
+                        android:inputType="numberDecimal"
                         android:layout_height="wrap_content"/>
+
 
 
 
@@ -169,14 +211,22 @@
             <LinearLayout android:layout_width="wrap_content"
                           android:orientation="vertical"
                           android:layout_gravity="center_horizontal"
-                          android:layout_margin="16dp"
                           android:layout_height="wrap_content">
 
-                <Button android:id="@+id/weight"
-                        android:layout_width="wrap_content"
+                <TextView
+                        android:id="@+id/weight"
                         android:text="Weight"
+                        android:textSize="20dp"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"/>
 
+                <EditText
+                        android:id="@+id/weightvalue"
+                        android:hint=" In Kgs"
+                        android:layout_width="wrap_content"
+                        android:textSize="15dp"
+                        android:inputType="numberDecimal"
+                        android:layout_height="wrap_content"/>
 
 
             </LinearLayout>
@@ -198,15 +248,16 @@
             android:layout_centerHorizontal="true">
 
 
-        <TextView
+
+        <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="Large Text"
-                android:textColor="@color/colorPrimaryDark"
+                android:text="Done"
                 android:textSize="15dp"
-                android:id="@+id/textViewUserEmail"
+                android:id="@+id/buttonDone"
                 android:layout_gravity="center_horizontal" />
+
+
 
         <Button
                 android:layout_width="wrap_content"
@@ -216,13 +267,6 @@
                 android:id="@+id/buttonLogout"
                 android:layout_gravity="center_horizontal" />
 
-        <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Done"
-                android:textSize="15dp"
-                android:id="@+id/buttonDone"
-                android:layout_gravity="center_horizontal" />
     </LinearLayout>
 
 
