@@ -277,6 +277,8 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
+                    android:id="@+id/exerciseId"
+                    android:onClick="clicked"
                     android:textAppearance="@style/TextAppearance.Shrine.Title"
                     android:background="@drawable/search_background"
                     android:orientation="horizontal"
@@ -303,7 +305,8 @@
                         android:layout_weight="1"
                         android:layout_width="191dp"
                         android:layout_height="40dp" tools:layout_editor_absoluteX="0dp"
-                        tools:ignore="MissingConstraints" android:id="@+id/exerciseQuantity"
+                        tools:ignore="MissingConstraints"
+                        android:id="@+id/exerciseQuantity"
                         app:layout_constraintTop_toBottomOf="@+id/exerciseText" android:layout_marginBottom="8dp"
                         app:layout_constraintBottom_toBottomOf="parent"/>
 

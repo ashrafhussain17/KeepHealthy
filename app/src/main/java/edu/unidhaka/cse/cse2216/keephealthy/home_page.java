@@ -74,11 +74,12 @@ public class home_page extends AppCompatActivity implements NavigationView.OnNav
                 startActivity(intent);
                 break;
             case R.id.nav_settings:
-                intent = new Intent(this, ProfileActivity.class);
+                intent = new Intent(this, DrinkWater.class);
                 startActivity(intent);
                 break;
             case R.id.nav_logout:
-
+                intent = new Intent(this,LoginPage.class);
+                startActivity(intent);
                 break;
 
         }
@@ -99,8 +100,13 @@ public class home_page extends AppCompatActivity implements NavigationView.OnNav
 
     public void clicked(View view) {
         int id = view.getId();
-        Intent intent = null;
+        Intent intent ;
         switch (id) {
+            case R.id.exerciseId:
+                intent = new Intent(this,exercise.class);
+                startActivity(intent);
+                break;
+
             case R.id.take_a_meal_id:
                 intent = new Intent(this, Take_a_meal.class);
                 startActivity(intent);

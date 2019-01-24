@@ -8,6 +8,8 @@
         android:padding="8dp"
         tools:context=".exercise">
 
+
+
     <android.support.v7.widget.RecyclerView
             android:id="@+id/recyclerview_id"
             android:layout_width="match_parent"

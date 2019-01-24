@@ -29,6 +29,8 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.*;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
@@ -59,11 +61,15 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
     private EditText uweight;
 
 
+    private DatabaseReference reference;
+
+
     private Button buttonLogout;
     private Button buttonDone;
     private TextView birthDate;
     private Button buttonSave;
-    private DatabaseReference reference;
+
+
 
     private static final int PERMISSION_CODE = 1000;
     private static final int IMAGE_CAPTURE_CODE = 1001;
@@ -88,14 +94,26 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
         uweight = (EditText) findViewById(R.id.weightvalue);
         sex = (Spinner) findViewById(R.id.sex);
 
+        final String spinner1 = sex.getSelectedItem().toString();
+
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @TargetApi(Build.VERSION_CODES.LOLLIPOP)
             @Override
             public void onClick(View v) {
-                Users users = new Users(name.getText().toString(), sex.getTransitionName(),
+                Users users = new Users(name.getText().toString(), spinner1,
                         uheight.getText().toString(),uweight.getText().toString());
-                reference.child("room").push().setValue(users);
-                finish();
+                reference.child("room").push().setValue(users).addOnSuccessListener(new OnSuccessListener<Void>() {
+                    @Override
+                    public void onSuccess(Void aVoid) {
+                        finish();
+                    }
+                }).addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(ProfileActivity.this, "Not Fulfilled", Toast.LENGTH_SHORT).show();
+                    }
+                });
+
             }
         });
 

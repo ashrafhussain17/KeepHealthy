@@ -13,39 +13,37 @@
             app:layout_constraintEnd_toEndOf="parent" app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 
-    <RelativeLayout
+    <LinearLayout
             android:id="@+id/relativeLayout"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:layout_marginTop="68dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="64dp"
             android:background="@drawable/search_background"
             android:orientation="horizontal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-                android:id="@+id/search_icon"
-                android:layout_width="55dp"
-                android:layout_height="35dp"
-                android:layout_alignParentStart="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginStart="14dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ic_search_black_24dp"/>
+
 
         <EditText
+                android:id="@+id/editTextName"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:textAppearance="@style/TextAppearance.Shrine.Title"
-                android:layout_marginBottom="5dp"
-                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="10dp"
                 android:textSize="17sp"
                 android:gravity="center|left"
-                android:layout_toRightOf="@+id/search_icon"
+                android:textAlignment="center"
                 android:backgroundTint="@color/breakfast"
-                android:hint="Search"/>
+                android:hint="Food Name"/>
 
-    </RelativeLayout>
+
+
+
+
+    </LinearLayout>
+
 
     <android.support.constraint.ConstraintLayout
             android:id="@+id/constraintLayout2"
@@ -68,7 +66,7 @@
                 android:layout_marginStart="8dp"
                 android:background="@drawable/search_background"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/button"
+                app:layout_constraintEnd_toStartOf="@+id/buttonAddArtist"
                 app:layout_constraintHorizontal_bias="0.315"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -77,6 +75,7 @@
         </RelativeLayout>
 
         <Spinner
+                android:id="@+id/spinnerGenres"
                 android:layout_width="124dp"
                 android:layout_height="match_parent"
                 android:layout_marginEnd="8dp"
@@ -85,7 +84,7 @@
                 android:textAlignment="center"
                 android:textAppearance="@style/TextAppearance.Shrine.Title"
                 app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toStartOf="@+id/button"
+                app:layout_constraintEnd_toStartOf="@+id/buttonAddArtist"
                 app:layout_constraintHorizontal_bias="0.342"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -94,7 +93,7 @@
         </Spinner>
 
         <Button
-                android:id="@+id/button"
+                android:id="@+id/buttonAddArtist"
                 android:layout_width="100dp"
                 android:layout_height="match_parent"
                 android:layout_alignParentEnd="true"
@@ -102,7 +101,7 @@
 
                 android:layout_marginStart="8dp"
                 android:background="@drawable/addfood_back"
-                android:text="Add Food"
+                android:text="Add"
                 android:textSize="20sp"
                 android:textAppearance="@style/TextAppearance.Shrine.Title"
                 android:textColor="@color/breakfast"
@@ -127,7 +126,7 @@
                 android:background="@drawable/list_view_border"
                 android:layout_width="match_parent"
                 android:layout_height="248dp"
-                android:id="@+id/listview"
+                android:id="@+id/listViewArtists"
                 android:layout_marginLeft="5dp"
                 android:textAppearance="@style/TextAppearance.Shrine.Title"
                 android:layout_marginRight="5dp"
