@@ -2,6 +2,8 @@ package edu.unidhaka.cse.cse2216.keephealthy;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -12,8 +14,10 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
@@ -97,6 +101,27 @@ public class home_page extends AppCompatActivity implements NavigationView.OnNav
             case R.id.nav_settings:
                 intent = new Intent(this, ProfileActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.nav_logout:
+                AlertDialog.Builder  builder= new AlertDialog.Builder(this);
+                View view = LayoutInflater.from(this).inflate(R.layout.logout_alert,null);
+                builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finishAffinity();
+                        System.exit(0);
+                    }
+                });
+                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                });
+                builder.setView(view);
+                builder.show();
+
+
                 break;
 
 

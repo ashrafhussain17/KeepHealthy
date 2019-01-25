@@ -1,8 +1,11 @@
 package edu.unidhaka.cse.cse2216.keephealthy;
 
 import android.app.Activity;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -19,7 +22,7 @@ import com.google.firebase.database.*;
 import java.util.ArrayList;
 import java.util.List;
 
-public class meal extends Activity {
+public class meal extends AppCompatActivity {
 
 
     EditText editTextName;
@@ -36,7 +39,21 @@ public class meal extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.meal_layout);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
 
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+
+        int id= getIntent().getIntExtra("viewid",-1);
+        switch (id)
+        {
+            case R.id.breakfasT:  this.setTitle("Breakfast"); break;
+            case R.id.luncH:  this.setTitle("Lunch"); break;
+            case R.id.dinneR:  this.setTitle("Dinner"); break;
+            case R.id.morningsnackS:  this.setTitle("Morning Snacks"); break;
+            case R.id.eveningsnackS:  this.setTitle("Evening Snacks");break;
+        }
 
         databaseArtists = FirebaseDatabase.getInstance().getReference("Foods");
 
