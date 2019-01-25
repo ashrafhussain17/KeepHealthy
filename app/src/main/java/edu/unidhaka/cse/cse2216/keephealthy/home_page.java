@@ -1,5 +1,6 @@
 package edu.unidhaka.cse.cse2216.keephealthy;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,8 +11,10 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
 public class home_page extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -20,10 +23,9 @@ public class home_page extends AppCompatActivity implements NavigationView.OnNav
     public int sleep_hours = 0;
     public int calorie_burnt = 0;
 
+    public ProgressBar progressSleep,progressMeal,progressDrinks,progressBurnt;
     public String CalorieTaken, WaterTaken, SleepHours, CalorieBurnt;
-
-    TextView mCalorieTaken, mWaterTaken, mSleepHours, mCalorieBurnt;
-    TextView mMealAmount, mWaterAmount, mSleepAmount, mBurntAmount;
+    public TextView mMealAmount, mDrinksAmount, mSleepAmount, mBurntAmount;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,10 @@ public class home_page extends AppCompatActivity implements NavigationView.OnNav
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        progressSleep=(ProgressBar)findViewById(R.id.SleepProgress);
+        progressMeal=(ProgressBar)findViewById(R.id.MealProgress);
+        progressBurnt=(ProgressBar)findViewById(R.id.BurntProgress);
+        progressDrinks=(ProgressBar)findViewById(R.id.DrinksProgress);
 
                 DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,
@@ -52,35 +58,47 @@ public class home_page extends AppCompatActivity implements NavigationView.OnNav
         SleepHours = "0 ";
         CalorieBurnt = "0 ";
 
-        mCalorieTaken = (TextView) findViewById(R.id.mealid);
-        mWaterTaken = (TextView) findViewById(R.id.waterid);
-        mSleepHours = (TextView) findViewById(R.id.sleepid);
-        mCalorieBurnt = (TextView) findViewById(R.id.burntid);
         mBurntAmount = (TextView) findViewById(R.id.burntamount);
         mMealAmount = (TextView) findViewById(R.id.mealamount);
         mSleepAmount = (TextView) findViewById(R.id.sleepamount);
-        mWaterAmount = (TextView) findViewById(R.id.wateramount);
+        mDrinksAmount = (TextView) findViewById(R.id.drinksamount);
+
+        showProgress();
+
+    }
+
+    @SuppressLint({"NewApi", "SetTextI18n"})
+    private void showProgress() {
+
+        mBurntAmount.setText("25"+" / "+"100");
+        mMealAmount.setText("25"+" / "+"100");
+        mSleepAmount.setText("25"+" / "+"100");
+        mDrinksAmount.setText("25"+" / "+"100");
+        progressDrinks.setProgress(25,true);
+        progressBurnt.setProgress(25,true);
+        progressSleep.setProgress(25,true);
+        progressMeal.setProgress(25,true);
+
+
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
+        Log.d("sakib","navigation");
         int id = item.getItemId();
         Intent intent = null;
 
         switch (id) {
             case R.id.nav_profile:
-                intent = new Intent(this, ProfileActivity.class);
+                intent = new Intent(this,ProfileActivity.class);
                 startActivity(intent);
                 break;
             case R.id.nav_settings:
-                intent = new Intent(this, DrinkWater.class);
+                intent = new Intent(this, ProfileActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.nav_logout:
-                intent = new Intent(this,LoginPage.class);
-                startActivity(intent);
-                break;
+
 
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
@@ -100,13 +118,8 @@ public class home_page extends AppCompatActivity implements NavigationView.OnNav
 
     public void clicked(View view) {
         int id = view.getId();
-        Intent intent ;
+        Intent intent = null;
         switch (id) {
-            case R.id.exerciseId:
-                intent = new Intent(this,exercise.class);
-                startActivity(intent);
-                break;
-
             case R.id.take_a_meal_id:
                 intent = new Intent(this, Take_a_meal.class);
                 startActivity(intent);
@@ -117,6 +130,13 @@ public class home_page extends AppCompatActivity implements NavigationView.OnNav
                 startActivity(intent);
                 break;
 
+            case R.id.exercise_id:
+                intent = new Intent(this, exercise.class);
+                startActivity(intent);
+                break;
+
         }
     }
+
+
 }

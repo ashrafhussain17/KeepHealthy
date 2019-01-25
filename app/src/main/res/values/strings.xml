@@ -33,6 +33,7 @@
 
     <string name="action_settings">Settings</string>
     <string-array name="quantity">
+        <item>quantity</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>

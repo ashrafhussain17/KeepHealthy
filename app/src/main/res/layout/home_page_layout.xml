@@ -5,6 +5,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/drawer_layout"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent" >
     <LinearLayout
@@ -22,7 +23,6 @@
                       android:layout_height="match_parent"
                       android:background="@color/back"
                       tools:context=".Registration" android:orientation="vertical">
-
 
 
             <LinearLayout
@@ -57,25 +57,163 @@
                                 android:gravity="center"
                                 android:layout_weight="1"
                                 android:layout_width="match_parent"
-                                android:layout_height="40dp" />
+                                android:layout_height="40dp"/>
 
                     </LinearLayout>
 
                     <LinearLayout
                             android:layout_weight="1"
                             android:layout_marginLeft="2dp"
+                            android:orientation="vertical"
                             android:background="@drawable/homeright"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
                         <TextView
-                                android:gravity="center"
-                                android:text="800 cal"
                                 android:id="@+id/mealamount"
+                                android:text="asdf"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                tools:text="sakib"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="4dp"
+
+
+                        />
+
+                        <ProgressBar
+                                android:id="@+id/MealProgress"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                android:layout_marginBottom="6dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                        />
+
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="7dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp">
+                    <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_marginRight="2dp"
+                            android:layout_width="match_parent"
+                            android:background="@drawable/home"
+                            android:layout_height="match_parent">
+
+                        <TextView
+                                android:text="Drinks"
                                 android:textSize="20sp"
+                                android:id="@+id/drinksid"
+                                android:textAlignment="center"
+                                android:gravity="center"
                                 android:layout_weight="1"
-                                android:layout_width="191dp"
-                                android:layout_height="40dp" />
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_marginLeft="2dp"
+                            android:orientation="vertical"
+                            android:background="@drawable/homeright"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                tools:text="sakib"
+                                android:text="asdf"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="4dp"
+                                android:id="@+id/drinksamount"
+
+                        />
+
+                        <ProgressBar
+                                android:id="@+id/DrinksProgress"
+
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                android:layout_marginBottom="6dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                        />
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                        android:layout_marginRight="10dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginTop="7dp"
+                        android:orientation="horizontal"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp">
+                    <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_marginRight="2dp"
+                            android:layout_width="match_parent"
+                            android:background="@drawable/home"
+                            android:layout_height="match_parent">
+
+                        <TextView
+                                android:text="Sleep"
+                                android:textSize="20sp"
+                                android:id="@+id/sleepid"
+                                android:textAlignment="center"
+                                android:gravity="center"
+                                android:layout_weight="1"
+                                android:layout_width="match_parent"
+                                android:layout_height="40dp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                            android:layout_weight="1"
+                            android:layout_marginLeft="2dp"
+                            android:orientation="vertical"
+                            android:background="@drawable/homeright"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                        <TextView
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                tools:text="sakib"
+                                android:text="asdf"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="4dp"
+                                android:id="@+id/sleepamount"
+
+                        />
+
+                        <ProgressBar
+                                android:id="@+id/SleepProgress"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                android:layout_marginBottom="6dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="15dp"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                        />
 
                     </LinearLayout>
 
@@ -104,119 +242,38 @@
                                 android:gravity="center"
                                 android:layout_weight="1"
                                 android:layout_width="match_parent"
-                                android:layout_height="40dp" />
+                                android:layout_height="40dp"/>
 
                     </LinearLayout>
 
                     <LinearLayout
                             android:layout_weight="1"
                             android:layout_marginLeft="2dp"
+                            android:orientation="vertical"
                             android:background="@drawable/homeright"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
                         <TextView
-                                android:gravity="center"
-                                android:text="800 cal"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginTop="4dp"
                                 android:id="@+id/burntamount"
-                                android:textSize="20sp"
-                                android:layout_weight="1"
-                                android:layout_width="191dp"
-                                android:layout_height="40dp" />
 
-                    </LinearLayout>
+                        />
 
+                        <ProgressBar
 
-                </LinearLayout>
-
-                <LinearLayout
-                        android:layout_marginRight="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="7dp"
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp">
-                    <LinearLayout
-                            android:layout_weight="1"
-                            android:layout_marginRight="2dp"
-                            android:layout_width="match_parent"
-                            android:background="@drawable/home"
-                            android:layout_height="match_parent">
-
-                        <TextView
-                                android:text="Water"
-                                android:textSize="20sp"
-                                android:id="@+id/waterid"
-                                android:textAlignment="center"
-                                android:gravity="center"
-                                android:layout_weight="1"
+                                android:id="@+id/BurntProgress"
+                                style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+                                android:layout_marginBottom="6dp"
+                                android:layout_marginTop="6dp"
+                                android:layout_marginLeft="5dp"
+                                android:layout_marginRight="15dp"
                                 android:layout_width="match_parent"
-                                android:layout_height="40dp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                            android:layout_weight="1"
-                            android:layout_marginLeft="2dp"
-                            android:background="@drawable/homeright"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                        <TextView
-                                android:gravity="center"
-                                android:text="800 cal"
-                                android:id="@+id/wateramount"
-                                android:textSize="20sp"
-                                android:layout_weight="1"
-                                android:layout_width="191dp"
-                                android:layout_height="40dp" />
-
-                    </LinearLayout>
-
-
-                </LinearLayout>
-
-                <LinearLayout
-                        android:layout_marginRight="10dp"
-                        android:layout_marginLeft="10dp"
-                        android:layout_marginTop="7dp"
-                        android:orientation="horizontal"
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp">
-                    <LinearLayout
-                            android:layout_weight="1"
-                            android:layout_marginRight="2dp"
-                            android:layout_width="match_parent"
-                            android:background="@drawable/home"
-                            android:layout_height="match_parent">
-
-                        <TextView
-                                android:text="Sleep"
-                                android:textSize="20sp"
-                                android:id="@+id/sleepid"
-                                android:textAlignment="center"
-                                android:gravity="center"
-                                android:layout_weight="1"
-                                android:layout_width="match_parent"
-                                android:layout_height="40dp" />
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                            android:layout_weight="1"
-                            android:layout_marginLeft="2dp"
-                            android:background="@drawable/homeright"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-
-                        <TextView
-                                android:gravity="center"
-                                android:text="800 cal"
-                                android:id="@+id/sleepamount"
-                                android:textSize="20sp"
-                                android:layout_weight="1"
-                                android:layout_width="191dp"
-                                android:layout_height="40dp" />
+                                android:layout_height="wrap_content"
+                        />
 
                     </LinearLayout>
 
@@ -282,7 +339,8 @@
                     android:textAppearance="@style/TextAppearance.Shrine.Title"
                     android:background="@drawable/search_background"
                     android:orientation="horizontal"
-
+                    android:id="@+id/exercise_id"
+                    android:onClick="clicked"
                     android:layout_width="match_parent"
                     android:layout_height="100dp">
                 <TextView
@@ -367,14 +425,8 @@
             </android.support.constraint.ConstraintLayout>
 
 
-
-
-
-
-
-
-
         </LinearLayout>
+
 
 
 

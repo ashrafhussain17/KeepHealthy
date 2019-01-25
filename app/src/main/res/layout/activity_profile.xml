@@ -250,15 +250,13 @@
             android:layout_centerHorizontal="true">
 
 
-
         <Button
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Save data"
                 android:textSize="15dp"
                 android:id="@+id/buttonSave"
-                android:layout_gravity="center_horizontal" />
-
+                android:layout_gravity="center_horizontal"/>
 
 
         <Button
@@ -267,8 +265,7 @@
                 android:text="Done"
                 android:textSize="15dp"
                 android:id="@+id/buttonDone"
-                android:layout_gravity="center_horizontal" />
-
+                android:layout_gravity="center_horizontal"/>
 
 
         <Button
@@ -277,7 +274,7 @@
                 android:text="Logout"
                 android:textSize="15dp"
                 android:id="@+id/buttonLogout"
-                android:layout_gravity="center_horizontal" />
+                android:layout_gravity="center_horizontal"/>
 
     </LinearLayout>
 
