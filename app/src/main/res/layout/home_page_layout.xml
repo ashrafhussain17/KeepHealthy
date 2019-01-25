@@ -334,13 +334,12 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
-                    android:id="@+id/exerciseId"
+                    android:id="@+id/exercise_id"
                     android:onClick="clicked"
                     android:textAppearance="@style/TextAppearance.Shrine.Title"
                     android:background="@drawable/search_background"
                     android:orientation="horizontal"
-                    android:id="@+id/exercise_id"
-                    android:onClick="clicked"
+
                     android:layout_width="match_parent"
                     android:layout_height="100dp">
                 <TextView
