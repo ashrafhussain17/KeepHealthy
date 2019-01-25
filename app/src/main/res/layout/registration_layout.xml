@@ -43,7 +43,7 @@
 
             <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
-                    android:id="@+id/email_edit_text"
+                    android:id="@+id/input_email"
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:maxLines="1" />
@@ -57,7 +57,7 @@
                 app:errorEnabled="true">
 
             <android.support.design.widget.TextInputEditText
-                    android:id="@+id/password_edit_text"
+                    android:id="@+id/input_password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword" />
@@ -68,7 +68,7 @@
                 android:layout_height="wrap_content">
 
             <android.support.design.button.MaterialButton
-                    android:id="@+id/sign_up"
+                    android:id="@+id/btn_signup"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="nextclk"
@@ -86,7 +86,7 @@
         <TextView android:layout_width="match_parent"
                   android:text="Already Registered ? Sign In here"
                   android:textAlignment="center"
-                  android:id="@+id/registerSignin"
+                  android:id="@+id/login_page"
                   android:layout_height="wrap_content"/>
 
 

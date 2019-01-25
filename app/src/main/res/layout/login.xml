@@ -37,6 +37,7 @@
                 android:textAllCaps="true"
                 android:textSize="16sp"/>
 
+
         <android.support.design.widget.TextInputLayout
                 style="@style/Widget.Shrine.TextInputLayout"
                 android:layout_width="match_parent"
@@ -47,7 +48,7 @@
 
             <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
-                    android:id="@+id/email_edit_text"
+                    android:id="@+id/email"
                     android:layout_height="wrap_content"
                     android:inputType="text"
                     android:maxLines="1"/>
@@ -62,7 +63,7 @@
                 app:errorEnabled="true">
 
             <android.support.design.widget.TextInputEditText
-                    android:id="@+id/password_edit_text"
+                    android:id="@+id/password"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:inputType="textPassword"/>
@@ -73,7 +74,7 @@
                 android:layout_height="wrap_content">
 
             <android.support.design.button.MaterialButton
-                    android:id="@+id/sign_in"
+                    android:id="@+id/ah_login"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:onClick="click"
@@ -108,10 +109,17 @@
                     android:onClick="click"
                     android:textColor="@color/link"
                     android:textSize="16sp"
-                    android:id="@+id/signuplink"
+                    android:id="@+id/sign_in_button"
                     android:layout_width="match_parent"
-                    android:layout_height="50dp"/>
+                    android:layout_height="50dp" tools:ignore="OnClick"/>
         </LinearLayout>
+
+
+        <com.google.android.gms.common.SignInButton
+                android:layout_gravity="center"
+                android:id="@+id/sign_in_google"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
 
 
     </LinearLayout>
