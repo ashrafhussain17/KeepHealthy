@@ -1,11 +1,15 @@
 package edu.unidhaka.cse.cse2216.keephealthy;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.TextInputEditText;
+import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.*;
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
@@ -21,7 +25,8 @@ import com.google.firebase.auth.*;
 public class LoginPage extends AppCompatActivity {
 
     private static final String TAG = "";
-    private EditText inputEmail, inputPassword;
+    private TextInputEditText inputEmail, inputPassword;
+    private TextInputLayout passwordTextInput,emailTextInput;
     private FirebaseAuth mAuth;
 
 
@@ -39,6 +44,7 @@ public class LoginPage extends AppCompatActivity {
 
     }
 
+    @SuppressLint("ClickableViewAccessibility")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,12 +59,31 @@ public class LoginPage extends AppCompatActivity {
 
         setContentView(R.layout.login);
 
-        inputEmail = (EditText) findViewById(R.id.email);
-        inputPassword = (EditText) findViewById(R.id.password);
+        inputEmail =  findViewById(R.id.email);
+        inputPassword =  findViewById(R.id.password);
+        passwordTextInput = findViewById(R.id.password_text_input);
+        emailTextInput= findViewById(R.id.email_input);
         Button ahlogin = (Button) findViewById(R.id.ah_login);
         TextView btnSignIn = (TextView) findViewById(R.id.sign_in_button);
         button = (SignInButton) findViewById(R.id.sign_in_google);
 
+        inputPassword.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+
+                emailTextInput.setError(null);
+                return false;
+
+            }
+        });
+
+        inputEmail.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                inputPassword.setError(null);
+                return false;
+            }
+        });
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,14 +108,31 @@ public class LoginPage extends AppCompatActivity {
             public void onClick(View v) {
                 String email = inputEmail.getText().toString();
                 final String password = inputPassword.getText().toString();
+
                 if (TextUtils.isEmpty(email)) {
-                    Toast.makeText(getApplicationContext(), "Please enter email id", Toast.LENGTH_SHORT).show();
-                    return;
+                    emailTextInput.setError(getString(R.string.email_warning));
+                    return ;
+                    //Toast.makeText(this, "Please enter email", Toast.LENGTH_LONG).show();
                 }
+                else
+                    emailTextInput.setError(null);
+
+
                 if (TextUtils.isEmpty(password)) {
-                    Toast.makeText(getApplicationContext(), "Enter Password", Toast.LENGTH_SHORT).show();
-                    return;
+                    passwordTextInput.setError(getString(R.string.password_warning));
+                    return ;
+                    //Toast.makeText(this, "Please enter password", Toast.LENGTH_LONG).show();
                 }
+                else
+                {passwordTextInput.setError(null);}
+//                if (TextUtils.isEmpty(email)) {
+//                    Toast.makeText(getApplicationContext(), "Please enter email id", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
+//                if (TextUtils.isEmpty(password)) {
+//                    Toast.makeText(getApplicationContext(), "Enter Password", Toast.LENGTH_SHORT).show();
+//                    return;
+//                }
 
 
 

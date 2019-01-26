@@ -14,8 +14,8 @@
     <string name="shr_hint_password">Password</string>
     <string name="shr_filter_title">Filter</string>
     <string name="shr_search_title">Search</string>
-    <string name="email_warning">Your email is invalid</string>
-    <string name="password_warning">Your password is invalid</string>
+    <string name="email_warning">Please enter email id</string>
+    <string name="password_warning">Please enter your password</string>
     <string name="enter_email">Please enter your email</string>
     <string name="enter_password">Please enter your password</string>
     <string name="shr_hint_username">Email</string>
