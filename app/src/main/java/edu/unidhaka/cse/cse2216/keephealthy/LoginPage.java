@@ -51,7 +51,6 @@ public class LoginPage extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        //check the current user
         if (mAuth.getCurrentUser() != null) {
             startActivity(new Intent(LoginPage.this, ProfileActivity.class));
             finish();
@@ -102,7 +101,6 @@ public class LoginPage extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
 
-        // Checking the email id and password is Empty
         ahlogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -112,7 +110,6 @@ public class LoginPage extends AppCompatActivity {
                 if (TextUtils.isEmpty(email)) {
                     emailTextInput.setError(getString(R.string.email_warning));
                     return ;
-                    //Toast.makeText(this, "Please enter email", Toast.LENGTH_LONG).show();
                 }
                 else
                     emailTextInput.setError(null);
@@ -121,22 +118,10 @@ public class LoginPage extends AppCompatActivity {
                 if (TextUtils.isEmpty(password)) {
                     passwordTextInput.setError(getString(R.string.password_warning));
                     return ;
-                    //Toast.makeText(this, "Please enter password", Toast.LENGTH_LONG).show();
                 }
                 else
                 {passwordTextInput.setError(null);}
-//                if (TextUtils.isEmpty(email)) {
-//                    Toast.makeText(getApplicationContext(), "Please enter email id", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
-//                if (TextUtils.isEmpty(password)) {
-//                    Toast.makeText(getApplicationContext(), "Enter Password", Toast.LENGTH_SHORT).show();
-//                    return;
-//                }
 
-
-
-                //authenticate user
                 mAuth.signInWithEmailAndPassword(email, password)
                         .addOnCompleteListener(LoginPage.this, new OnCompleteListener<AuthResult>() {
                             @Override
@@ -144,7 +129,6 @@ public class LoginPage extends AppCompatActivity {
 
 
                                 if (task.isSuccessful()) {
-                                    // there was an error
                                     Log.d(TAG, "signInWithEmail:success");
                                     Intent intent = new Intent(LoginPage.this, ProfileActivity.class);
                                     startActivity(intent);
@@ -192,18 +176,13 @@ public class LoginPage extends AppCompatActivity {
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
 
-        // Result returned from launching the Intent from GoogleSignInApi.getSignInIntent(...);
         if (requestCode == RC_SIGN_IN) {
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
             try {
-                // Google Sign In was successful, authenticate with Firebase
                 GoogleSignInAccount account = task.getResult(ApiException.class);
                 firebaseAuthWithGoogle(account);
             } catch (ApiException e) {
-
-                // Google Sign In failed, update UI appropriately
                 Log.w(TAG, "Google sign in failed", e);
-                // ...
             }
         }
     }
@@ -215,18 +194,13 @@ public class LoginPage extends AppCompatActivity {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
-                            // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
-                            //updateUI(user);
                         } else {
-                            // If sign in fails, display a message to the user.
                             Log.w(TAG, "signInWithCredential:failure", task.getException());
                             Toast.makeText(LoginPage.this, "Aut Fail", Toast.LENGTH_SHORT).show();
-                            //updateUI(null);
                         }
 
-                        // ...
                     }
                 });
     }

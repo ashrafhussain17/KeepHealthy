@@ -32,6 +32,11 @@
     <string name="reset_timer">Reset Timer</string>
     <string name="timer">00:00:00</string>
 
+
+    <string name="action_settingss">Settings</string>
+    <string name="setting">Menu</string>
+    <string name="settingss">Switch</string>
+
     <string name="action_settings">Settings</string>
     <string-array name="quantity">
         <item>quantity</item>

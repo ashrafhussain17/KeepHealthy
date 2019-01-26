@@ -46,10 +46,8 @@ import static android.Manifest.permission.CAMERA;
 
 public class ProfileActivity extends Activity implements View.OnClickListener {
 
-    //firebase auth object
     private FirebaseAuth firebaseAuth;
 
-    //view objects
     private TextView textViewUserEmail;
     private TextView nickname;
     private TextView height;
@@ -119,22 +117,15 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
 
 
 
-        //initializing firebase authentication object
         firebaseAuth = FirebaseAuth.getInstance();
 
-        //if the user is not logged in
-        //that means current user will return null
         if(firebaseAuth.getCurrentUser() == null){
-            //closing this activity
             finish();
-            //starting login activity
             startActivity(new Intent(this, LoginPage.class));
         }
 
-        //getting current user
         FirebaseUser user = firebaseAuth.getCurrentUser();
 
-        //initializing views
         textViewUserEmail = (TextView) findViewById(R.id.textViewUserEmail);
         nickname = (TextView) findViewById(R.id.nickname);
         height = (TextView) findViewById(R.id.heightvalue);
@@ -151,28 +142,23 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
         mImageView = findViewById(R.id.image_view);
         mCaptureBtn = findViewById(R.id.capture_image_btn);
 
-        //button click
         mCaptureBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //if system os is >= marshmallow, request runtime permission
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M){
                     if (checkSelfPermission(Manifest.permission.CAMERA) ==
                             PackageManager.PERMISSION_DENIED ||
                             checkSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE) ==
                                     PackageManager.PERMISSION_DENIED){
-                        //permission not enabled, request it
                         String[] permission = {Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE};
-                        //show popup to request permissions
+
                         requestPermissions(permission, PERMISSION_CODE);
                     }
                     else {
-                        //permission already granted
                         openCamera();
                     }
                 }
                 else {
-                    //system os < marshmallow
                     openCamera();
                 }
             }
@@ -198,10 +184,7 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
             nickname.requestFocus();
         }
 
-
-        //displaying logged in user name
         textViewUserEmail.setText("Welcome "+user.getEmail());
-        //test
 
 
         buttonLogout.setOnClickListener(this);
@@ -231,13 +214,9 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
     }
 
     public void onClick(View view) {
-        //if logout is pressed
         if(view == buttonLogout){
-            //logging out the user
             firebaseAuth.signOut();
-            //closing activity
             finish();
-            //starting login activity
             startActivity(new Intent(this, LoginPage.class));
         }
     }
@@ -266,19 +245,16 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
         startActivityForResult(cameraIntent, IMAGE_CAPTURE_CODE);
     }
 
-    //handling permission result
+
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        //this method is called, when user presses Allow or Deny from Permission Request Popup
         switch (requestCode){
             case PERMISSION_CODE:{
                 if (grantResults.length > 0 && grantResults[0] ==
                         PackageManager.PERMISSION_GRANTED){
-                    //permission from popup was granted
                     openCamera();
                 }
                 else {
-                    //permission from popup was denied
                     Toast.makeText(this, "Permission denied...", Toast.LENGTH_SHORT).show();
                 }
             }
@@ -288,10 +264,8 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        //called when image was captured from camera
 
         if (resultCode == RESULT_OK){
-            //set the image captured to our ImageView
             mImageView.setImageURI(image_uri);
         }
     }

@@ -1,6 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-
 <android.support.v4.widget.DrawerLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -422,6 +420,55 @@
                         app:layout_constraintHorizontal_bias="0.8" app:layout_constraintVertical_bias="0.0"/>
 
             </android.support.constraint.ConstraintLayout>
+
+
+            <android.support.constraint.ConstraintLayout
+                    android:layout_marginRight="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:textAppearance="@style/TextAppearance.Shrine.Title"
+                    android:background="@drawable/search_background"
+                    android:orientation="horizontal"
+                    android:id="@+id/step_count_id"
+                    android:onClick="clicked"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp">
+                <TextView
+                        android:text="Count Steps"
+                        android:textSize="20sp"
+                        android:textAlignment="center"
+                        android:gravity="center"
+                        android:layout_weight="1"
+                        android:layout_width="191dp"
+                        android:textAppearance="@style/TextAppearance.Shrine.Title"
+                        android:layout_height="45dp"
+                        android:id="@+id/countText" tools:ignore="MissingConstraints"/>
+
+                <TextView
+                        android:gravity="center|top"
+                        android:text="800 cal"
+                        android:textAppearance="@style/TextAppearance.Shrine.Title"
+                        android:textSize="20sp"
+                        android:layout_weight="1"
+                        android:layout_width="191dp"
+                        android:layout_height="40dp" tools:layout_editor_absoluteX="0dp"
+                        tools:ignore="MissingConstraints"
+                        android:id="@+id/stepQuantity"
+                        app:layout_constraintTop_toBottomOf="@+id/countText" android:layout_marginBottom="8dp"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+
+                <pl.droidsonroids.gif.GifImageView
+                        android:layout_width="117dp"
+                        android:layout_height="match_parent"
+                        android:src="@drawable/glass"
+
+                        app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+                        app:layout_constraintStart_toEndOf="@+id/stepQuantity" android:layout_marginStart="8dp"
+                        app:layout_constraintTop_toTopOf="parent" app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="0.8" app:layout_constraintVertical_bias="0.0"/>
+
+            </android.support.constraint.ConstraintLayout>
+
 
 
         </LinearLayout>

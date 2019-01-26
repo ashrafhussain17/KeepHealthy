@@ -160,6 +160,10 @@ public class home_page extends AppCompatActivity implements NavigationView.OnNav
                 startActivity(intent);
                 break;
 
+            case R.id.step_count_id:
+                intent = new Intent(this,Step_counter.class);
+                startActivity(intent);
+                break;
         }
     }
 

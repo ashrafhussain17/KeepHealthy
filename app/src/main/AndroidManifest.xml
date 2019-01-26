@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="edu.unidhaka.cse.cse2216.keephealthy">
+          xmlns:tools="http://schemas.android.com/tools" package="edu.unidhaka.cse.cse2216.keephealthy">
 
     <uses-permission android:name="android.permission.INTERNET"/>
 
 
     <uses-permission android:name="android.permission.CAMERA"/>
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
 
     <application
+            android:name=".MyApplication"
             android:allowBackup="true"
             android:icon="@mipmap/ic_launcher"
             android:label="@string/app_name"
             android:roundIcon="@mipmap/ic_launcher_round"
             android:supportsRtl="true"
-            android:theme="@style/Theme.Shrine">
+            android:theme="@style/Theme.Shrine" tools:ignore="GoogleAppIndexingWarning">
         <activity
                 android:name=".LoginPage"
                 android:screenOrientation="portrait">
@@ -55,6 +62,26 @@
                   android:parentActivityName=".home_page">
         </activity>
         <activity android:name=".date_picker"/>
+        <activity android:name=".Step_counter"/>
+
+        <service
+                android:name=".step.StepService"
+                android:label="Step counter service">
+
+        </service>
+
+        <receiver
+                android:name=".BootBroadcastReceiver"
+                android:enabled="true"
+                android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+                <action android:name="android.intent.action.MEDIA_MOUNTED" />
+                <action android:name="android.intent.action.MEDIA_UNMOUNTED" />
+                <action android:name="android.intent.action.MEDIA_EJECT" />
+                <action android:name="cn.ikaze.pedometer.start" />
+            </intent-filter>
+        </receiver>
     </application>
 
 </manifest>

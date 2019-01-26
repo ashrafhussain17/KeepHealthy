@@ -20,4 +20,5 @@
     <color name="loginPageBackgroundColor">#ffffff</color>
     <color name="colorControlActivated">#FF4081</color>
     <color name="productGridBackgroundColor">#FFFFFF</color>
+    <color name="transparent">#00000000</color>
 </resources>
