@@ -29,6 +29,8 @@ public class LoginPage extends AppCompatActivity {
     private TextInputLayout passwordTextInput,emailTextInput;
     private FirebaseAuth mAuth;
 
+    private TextView forgetPass;
+
 
     SignInButton button;
     private final static int RC_SIGN_IN = 123;
@@ -48,6 +50,7 @@ public class LoginPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.login);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -56,7 +59,7 @@ public class LoginPage extends AppCompatActivity {
             finish();
         }
 
-        setContentView(R.layout.login);
+
 
         inputEmail =  findViewById(R.id.email);
         inputPassword =  findViewById(R.id.password);
@@ -65,6 +68,16 @@ public class LoginPage extends AppCompatActivity {
         Button ahlogin = (Button) findViewById(R.id.ah_login);
         TextView btnSignIn = (TextView) findViewById(R.id.sign_in_button);
         button = (SignInButton) findViewById(R.id.sign_in_google);
+
+        forgetPass = (TextView) findViewById(R.id.forgetPassword);
+
+        forgetPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginPage.this,forgot_passwordd.class));
+
+            }
+        });
 
         inputPassword.setOnTouchListener(new View.OnTouchListener() {
             @Override

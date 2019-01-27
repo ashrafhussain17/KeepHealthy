@@ -17,6 +17,7 @@
             android:padding="24dp"
             android:paddingTop="16dp">
 
+
         <ImageView
                 android:layout_width="64dp"
                 android:layout_height="64dp"
@@ -37,6 +38,18 @@
                 android:textAppearance="@style/TextAppearance.Shrine.Title"
                 android:textAllCaps="true"
                 android:textSize="16sp"/>
+
+        <com.google.android.gms.common.SignInButton
+                android:layout_gravity="center"
+                android:id="@+id/sign_in_google"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        <TextView android:layout_width="match_parent"
+                  android:text="Forget Password"
+                  android:gravity="center"
+                  android:id="@+id/forgetPassword"
+                  android:layout_height="wrap_content"/>
 
 
         <android.support.design.widget.TextInputLayout
@@ -115,12 +128,6 @@
                     android:layout_height="50dp" tools:ignore="OnClick"/>
         </LinearLayout>
 
-
-        <com.google.android.gms.common.SignInButton
-                android:layout_gravity="center"
-                android:id="@+id/sign_in_google"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
 
 
     </LinearLayout>

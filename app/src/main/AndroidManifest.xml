@@ -40,6 +40,8 @@
         </activity>
         <activity android:name=".home_page"
                   android:label="Home Page"/>
+        <activity android:name=".forgot_passwordd"
+        android:parentActivityName=".LoginPage"/>
 
         <activity android:name=".meal"
                   android:parentActivityName=".Take_a_meal"/>
