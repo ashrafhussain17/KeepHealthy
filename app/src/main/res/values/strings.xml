@@ -39,7 +39,6 @@
 
     <string name="action_settings">Settings</string>
     <string-array name="quantity">
-        <item>quantity</item>
         <item>1</item>
         <item>2</item>
         <item>3</item>
@@ -47,7 +46,6 @@
     </string-array>
 
     <string-array name="gender_type">
-        <item>Gender</item>
         <item>Male</item>
         <item>Female</item>
     </string-array>

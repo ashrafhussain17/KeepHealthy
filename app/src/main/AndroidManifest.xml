@@ -64,7 +64,8 @@
                   android:parentActivityName=".home_page">
         </activity>
         <activity android:name=".date_picker"/>
-        <activity android:name=".Step_counter"/>
+        <activity android:name=".Step_counter"
+                  android:parentActivityName=".home_page"/>
 
         <service
                 android:name=".step.StepService"

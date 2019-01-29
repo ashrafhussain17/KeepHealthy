@@ -14,6 +14,7 @@ import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -31,6 +32,8 @@ public class home_page extends AppCompatActivity implements NavigationView.OnNav
     public String CalorieTaken, WaterTaken, SleepHours, CalorieBurnt;
     public TextView mMealAmount, mDrinksAmount, mSleepAmount, mBurntAmount;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,10 +47,9 @@ public class home_page extends AppCompatActivity implements NavigationView.OnNav
         progressBurnt=(ProgressBar)findViewById(R.id.BurntProgress);
         progressDrinks=(ProgressBar)findViewById(R.id.DrinksProgress);
 
-                DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
+        DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this,
-                drawer,
-                toolbar,
+                drawer,toolbar,
                 R.string.nav_open_drawer,
                 R.string.nav_close_drawer);
         drawer.addDrawerListener(toggle);
@@ -103,8 +105,9 @@ public class home_page extends AppCompatActivity implements NavigationView.OnNav
                 startActivity(intent);
                 break;
             case R.id.nav_logout:
-                AlertDialog.Builder  builder= new AlertDialog.Builder(this);
-                View view = LayoutInflater.from(this).inflate(R.layout.logout_alert,null);
+                AlertDialog.Builder  builder= new AlertDialog.Builder(home_page.this);
+                builder.setIcon(R.drawable.logout);
+                builder.setMessage("Do you want to logout?");
                 builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
@@ -112,14 +115,15 @@ public class home_page extends AppCompatActivity implements NavigationView.OnNav
                         System.exit(0);
                     }
                 });
-                builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                builder.setNeutralButton("Cancel", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
 
                     }
                 });
-                builder.setView(view);
-                builder.show();
+                AlertDialog alert= builder.create();
+
+                alert.show();
 
 
                 break;
@@ -146,6 +150,7 @@ public class home_page extends AppCompatActivity implements NavigationView.OnNav
         Intent intent = null;
         switch (id) {
             case R.id.take_a_meal_id:
+               // drawer.openDrawer(Gravity.LEFT=);
                 intent = new Intent(this, Take_a_meal.class);
                 startActivity(intent);
                 break;

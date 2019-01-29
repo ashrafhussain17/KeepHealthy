@@ -157,7 +157,7 @@
                                 <PersistentState>
                                   <option name="values">
                                     <map>
-                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/image/ic_filter_vintage_black_24dp.xml" />
+                                      <entry key="url" value="jar:file:/C:/Program%20Files/Android/Android%20Studio/plugins/android/lib/android.jar!/images/material_design_icons/content/ic_remove_black_24dp.xml" />
                                     </map>
                                   </option>
                                 </PersistentState>
@@ -167,8 +167,7 @@
                         </option>
                         <option name="values">
                           <map>
-                            <entry key="opacityPercent" value="87" />
-                            <entry key="outputName" value="shr_logo" />
+                            <entry key="outputName" value="remove" />
                             <entry key="sourceFile" value="C:\Users\Asus" />
                           </map>
                         </option>

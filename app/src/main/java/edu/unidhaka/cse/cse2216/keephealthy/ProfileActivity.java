@@ -111,6 +111,7 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
                         Toast.makeText(ProfileActivity.this, "Not Fulfilled", Toast.LENGTH_SHORT).show();
                     }
                 });
+                HomePage();
 
             }
         });
