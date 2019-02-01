@@ -166,24 +166,7 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
         });
 
 
-        String str1 = height.getText().toString();
-        String str2 = weight.getText().toString();
-        String str3 = nickname.getText().toString();
 
-       if(TextUtils.isEmpty(str1)){
-            height.setError("Please enter your weight");
-            height.requestFocus();
-        }
-
-        if(TextUtils.isEmpty(str2)){
-            weight.setError("Please enter your height");
-            weight.requestFocus();
-        }
-
-        if(TextUtils.isEmpty(str3)){
-            nickname.setError("Please enter your Nickname");
-            nickname.requestFocus();
-        }
 
         textViewUserEmail.setText("Welcome "+user.getEmail());
 
@@ -224,9 +207,32 @@ public class ProfileActivity extends Activity implements View.OnClickListener {
 
     private void HomePage() {
 
+        String str1 = height.getText().toString();
+        String str2 = weight.getText().toString();
+        String str3 = nickname.getText().toString();
 
+        if (!(TextUtils.isEmpty(str1))&& !(TextUtils.isEmpty(str2)) && !(TextUtils.isEmpty(str3) )){
             Intent intent = new Intent(this, home_page.class);
             startActivity(intent);
+        }else {
+
+
+            if (TextUtils.isEmpty(str1)) {
+                height.setError("Please enter your weight");
+                height.requestFocus();
+            }
+
+            if (TextUtils.isEmpty(str2)) {
+                weight.setError("Please enter your height");
+                weight.requestFocus();
+            }
+
+            if (TextUtils.isEmpty(str3)) {
+                nickname.setError("Please enter your Nickname");
+                nickname.requestFocus();
+            }
+        }
+
     }
 
     private void datePicker(){
