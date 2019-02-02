@@ -32,6 +32,4 @@ public class Take_a_meal extends AppCompatActivity {
         intent.putExtra("viewid",view.getId());
         startActivity(intent);
     }
-
-
 }

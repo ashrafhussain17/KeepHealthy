@@ -33,7 +33,6 @@ public class home_page extends AppCompatActivity implements NavigationView.OnNav
     public TextView mMealAmount, mDrinksAmount, mSleepAmount, mBurntAmount;
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -70,22 +69,19 @@ public class home_page extends AppCompatActivity implements NavigationView.OnNav
         mDrinksAmount = (TextView) findViewById(R.id.drinksamount);
 
         showProgress();
-
     }
 
     @SuppressLint({"NewApi", "SetTextI18n"})
     private void showProgress() {
 
-        mBurntAmount.setText("25"+" / "+"100");
-        mMealAmount.setText("25"+" / "+"100");
-        mSleepAmount.setText("25"+" / "+"100");
-        mDrinksAmount.setText("25"+" / "+"100");
-        progressDrinks.setProgress(25,true);
-        progressBurnt.setProgress(25,true);
-        progressSleep.setProgress(25,true);
-        progressMeal.setProgress(25,true);
-
-
+        mBurntAmount.setText(CalorieCalculation.burntAmount + " / " + CalorieCalculation.burnRAmount);
+        mMealAmount.setText(CalorieCalculation.mealAmount + " / " + CalorieCalculation.mealRAmount);
+        mSleepAmount.setText(CalorieCalculation.sleepAmount + " / " + CalorieCalculation.sleepRAmount);
+        mDrinksAmount.setText(CalorieCalculation.waterAmount + " / " + CalorieCalculation.waterRAmount);
+        progressDrinks.setProgress(CalorieCalculation.burntAmount/CalorieCalculation.burnRAmount);
+        progressBurnt.setProgress(CalorieCalculation.mealAmount/CalorieCalculation.mealRAmount);
+        progressSleep.setProgress(CalorieCalculation.sleepAmount/CalorieCalculation.sleepRAmount);
+        progressMeal.setProgress(CalorieCalculation.waterAmount/CalorieCalculation.waterRAmount);
     }
 
     @Override
@@ -124,11 +120,7 @@ public class home_page extends AppCompatActivity implements NavigationView.OnNav
                 AlertDialog alert= builder.create();
 
                 alert.show();
-
-
                 break;
-
-
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -171,6 +163,4 @@ public class home_page extends AppCompatActivity implements NavigationView.OnNav
                 break;
         }
     }
-
-
 }

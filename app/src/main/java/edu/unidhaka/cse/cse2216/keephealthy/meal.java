@@ -23,15 +23,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class meal extends AppCompatActivity {
-
-
     EditText editTextName;
     Spinner spinnerGenre;
     Button buttonAddArtist;
     ListView listViewArtists;
 
     List<Food> artists;
-
 
     DatabaseReference databaseArtists;
 
@@ -43,9 +40,10 @@ public class meal extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         ActionBar actionBar = getSupportActionBar();
+        assert actionBar != null;
         actionBar.setDisplayHomeAsUpEnabled(true);
 
-        int id= getIntent().getIntExtra("viewid",-1);
+        int id = getIntent().getIntExtra("viewid",-1);
         switch (id)
         {
             case R.id.breakfasT:  this.setTitle("Breakfast"); break;
@@ -84,13 +82,13 @@ public class meal extends AppCompatActivity {
                 return true;
             }
         });
-
-
     }
 
     private void addArtist() {
         String name = editTextName.getText().toString().trim();
         String genre = spinnerGenre.getSelectedItem().toString();
+
+        CalorieCalculation.mealAmount += 500;
 
         if (!TextUtils.isEmpty(name)) {
             String id = databaseArtists.push().getKey();
@@ -140,7 +138,6 @@ public class meal extends AppCompatActivity {
         return true;
     }
 
-
     private void showUpdateDeleteDialog(final String artistId, String artistName) {
 
         AlertDialog.Builder dialogBuilder = new AlertDialog.Builder(this);
@@ -157,7 +154,6 @@ public class meal extends AppCompatActivity {
         final AlertDialog b = dialogBuilder.create();
         b.show();
 
-
         buttonUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -169,7 +165,6 @@ public class meal extends AppCompatActivity {
                 }
             }
         });
-
 
         buttonDelete.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -183,11 +178,9 @@ public class meal extends AppCompatActivity {
                         b.dismiss();
                     }
                 });
-
             }
         });
     }
-
 
     private boolean deleteArtist(String id) {
         DatabaseReference dR = FirebaseDatabase.getInstance().getReference("Foods").child(id);

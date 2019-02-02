@@ -23,6 +23,14 @@
           }
         },
         {
+          "client_id": "466552888405-3j0o8u0920uupfmaq0jos7dp3uvtimmc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "edu.unidhaka.cse.cse2216.keephealthy",
+            "certificate_hash": "0c5fea4d2ceae658617c342276aacdb5ad95dcc8"
+          }
+        },
+        {
           "client_id": "466552888405-nnqj7nbrec6kllbnj58b2hepv1gc8em1.apps.googleusercontent.com",
           "client_type": 3
         }
