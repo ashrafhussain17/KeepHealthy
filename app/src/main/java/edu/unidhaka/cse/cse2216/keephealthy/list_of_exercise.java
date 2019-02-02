@@ -61,7 +61,7 @@ public class list_of_exercise extends Activity {
             }
         });
 
-        
+
 
         resetTimer.setOnClickListener(new View.OnClickListener() {
             @Override
