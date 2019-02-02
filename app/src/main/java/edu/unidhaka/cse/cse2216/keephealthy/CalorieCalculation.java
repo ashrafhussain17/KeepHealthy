@@ -24,7 +24,6 @@ public class CalorieCalculation {
         waterAmount = 0;
         waterRAmount = 2000;
     }
-
     public static void Check(){
 
     }
