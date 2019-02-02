@@ -13,7 +13,6 @@ public class StepDetector {
     private float MAX_VEL = 14f;
     private float MIN_VEL = 7f;
     private float init_vel = 1.1f;
-    //阈值
     private float VEL_THRESHOLD = init_vel;
     private float[] four_vels = {init_vel, init_vel, init_vel, init_vel};
     private int pos = 0;
@@ -21,13 +20,9 @@ public class StepDetector {
     private long lastStepTime = 0;
     private float lastVel = 0;
 
-    //初始WAIT_MODEL,连续5步后正常计步,
-    // 没有连续5步不记步
     private final long WAIT_STEPS = 4;
     private final int WAIT_MODEL = 0;
-    // ACTIVITY运行中,实时同步步数,不经过校验
     private final int ACTIVITY_MODEL = 1;
-    //运行模式,已经过WAIT_MODEL的检测
     private final int RUN_MODEL = 2;
     private int model;
 
@@ -37,9 +32,7 @@ public class StepDetector {
 
     private int initCount;
 
-    //波峰
     private float crest=0;
-    // 波谷
     private float trough=0;
 
     private final int up=0;
