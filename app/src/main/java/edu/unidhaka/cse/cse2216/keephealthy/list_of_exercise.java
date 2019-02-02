@@ -54,7 +54,6 @@ public class list_of_exercise extends Activity {
     }
 
     private void setListeners() {
-        //startTimer.setOnClickListener((View.OnClickListener) this);
         startTimer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -62,8 +61,7 @@ public class list_of_exercise extends Activity {
             }
         });
 
-
-        //resetTimer.setOnClickListener((View.OnClickListener) this);
+        
 
         resetTimer.setOnClickListener(new View.OnClickListener() {
             @Override
