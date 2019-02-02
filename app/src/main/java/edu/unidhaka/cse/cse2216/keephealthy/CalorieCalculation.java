@@ -12,12 +12,9 @@ public class CalorieCalculation {
     public static int waterAmount;
     public static int waterRAmount;
 
-    public static int currentDate;
     Date date;
 
     public CalorieCalculation(){
-        currentDate = 0;
-
         mealAmount = 0;
         mealRAmount = 2000;
         burnRAmount = 1200;
